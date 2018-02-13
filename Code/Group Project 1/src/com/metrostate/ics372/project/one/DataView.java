@@ -3,12 +3,19 @@ package com.metrostate.ics372.project.one;
 import java.util.Scanner;
 
 /**
- * This class is used for Data Functions, such as loading and saving data.
+ * This class is used for presenting data related options, such as loading and
+ * saving data, to the user.
  *
  */
-public class DataFunctions {
+public class DataView {
 
-	public void start() {
+	private DataController dataController;
+
+	public DataView() {
+		dataController = new DataController();
+	}
+
+	public void displayDataMenu() {
 		Scanner scanner = new Scanner(System.in);
 		String option;
 		do {
@@ -26,11 +33,11 @@ public class DataFunctions {
 			if (option.equals("1")) {
 				// TODO
 				System.out.println("Time to save some data!!");
-				saveData();
+				dataController.saveData();
 			} else if (option.equals("2")) {
 				// TODO
 				System.out.println("Time to load some data!!");
-				loadData();
+				dataController.loadData();
 			} else if (option.equals("3")) {
 				// Exit to the main menu
 				return;
@@ -41,11 +48,4 @@ public class DataFunctions {
 		} while (true);
 	}
 
-	private void saveData() {
-
-	}
-
-	private void loadData() {
-
-	}
 }
