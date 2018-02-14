@@ -7,12 +7,12 @@ import java.util.Scanner;
  * saving data, to the user.
  *
  */
-public class DataView {
+public class DiskView {
 
-	private DataController dataController;
+	private DiskController dataController;
 
-	public DataView() {
-		dataController = new DataController();
+	public DiskView() {
+		dataController = new DiskController();
 	}
 
 	public void displayDataMenu() {

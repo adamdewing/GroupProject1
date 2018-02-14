@@ -5,7 +5,7 @@ package com.metrostate.ics372.project.one;
  * @author adamv
  *
  */
-public class DataController {
+public class DiskController {
 
 	/**
 	 * Saves Data to Disk
