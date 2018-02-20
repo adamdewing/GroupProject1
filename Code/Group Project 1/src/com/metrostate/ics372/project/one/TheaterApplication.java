@@ -45,7 +45,8 @@ public class TheaterApplication {
 			option = scanner.next();
 			
 			if (option.equals("1")) {
-
+				ClientView cv = new ClientView();
+				cv.displayClientMenu();
 			} else if (option.equals("2")) {
 
 			} else if (option.equals("3")) {
