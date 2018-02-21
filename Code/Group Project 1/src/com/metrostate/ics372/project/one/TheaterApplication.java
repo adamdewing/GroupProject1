@@ -18,11 +18,6 @@ public class TheaterApplication {
 	public static final String SHOW = "Show";
 	public static final String DATA = "Data";
 
-	private List<Client> clients = new ArrayList<Client>();
-	private List<CreditCard> creditCards = new ArrayList<CreditCard>();
-	private List<Customer> customers = new ArrayList<Customer>();
-	
-
 	public static void main(String[] args) {
 		TheaterApplication app = new TheaterApplication();
 		app.startApplication();
@@ -50,7 +45,7 @@ public class TheaterApplication {
 			} else if (option.equals("2")) {
 
 			} else if (option.equals("3")) {
-				DataView df = new DataView();
+				DiskView df = new DiskView();
 				df.displayDataMenu();
 			} else if (option.equals("4")) {
 				System.out.println("Exiting Application");
@@ -62,15 +57,4 @@ public class TheaterApplication {
 
 	}
 
-	public List<Client> getClients() {
-		return clients;
-	}
-
-	public List<CreditCard> getCreditCards() {
-		return creditCards;
-	}
-	
-	public List<Customer> getCustomers() {
-		return customers;
-	}
 }
