@@ -1,5 +1,6 @@
 package com.metrostate.ics372.project.one;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -17,15 +18,12 @@ public class Customer {
 	
 	private int zipCode;
 	private int phoneNumber;
-	private int creditCard;
 	private int creditCardExpiration;
 	
 	private UUID customerId;
 	
-	private List<Client> clients = new ArrayList<Client>();
+	private List<CreditCard> creditCard = new ArrayList<CreditCard>();
 
-
-	
 	public Customer(String firstName, String lastName, String streetAddress, String city, 
 			String state, int zipCode, int phoneNumber, int creditCard, int creditCardExpiration) {
 		this.firstName = firstName;
@@ -35,7 +33,6 @@ public class Customer {
 		this.state = state;
 		this.zipCode = zipCode;
 		this.phoneNumber = phoneNumber;
-		this.creditCard = creditCard;
 		this.creditCardExpiration = creditCardExpiration;
 		
 		//Generate a unique id
