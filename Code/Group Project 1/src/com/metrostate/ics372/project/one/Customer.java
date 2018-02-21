@@ -1,5 +1,7 @@
 package com.metrostate.ics372.project.one;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -18,9 +20,11 @@ public class Customer {
 	private int creditCard;
 	private int creditCardExpiration;
 	
-	UUID customerId;
+	private UUID customerId;
 	
 	private List<Client> clients = new ArrayList<Client>();
+
+
 	
 	public Customer(String firstName, String lastName, String streetAddress, String city, 
 			String state, int zipCode, int phoneNumber, int creditCard, int creditCardExpiration) {
