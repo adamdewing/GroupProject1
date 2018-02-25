@@ -1,7 +1,9 @@
 package com.metrostate.ics372.project.one;
 
+import java.awt.List;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.Random;
 
 /**
@@ -12,12 +14,11 @@ public class Client implements Serializable{
 
 	private String name;
 	private String address;
-	private static String phoneNumber;
+	private String phoneNumber;
 	private double balance;
-	private static int iD = 100;
-	private static String clientId;
-	private Date performanceDate;
-	private boolean scheduled;
+	private String clientId;
+	private LinkedList<Show> showDate = new LinkedList<Show>();
+	private boolean isScheduled;
 	
 	public Client() {};
 	
@@ -26,18 +27,12 @@ public class Client implements Serializable{
 		this.address = address;
 		this.phoneNumber = phoneNumber;
 		this.balance = 0;
-		setClientId();
-		setScheduled();
-		iD++;
-	};
-	
-	private static void setClientId() {
 		Random rndObj = new Random();
-		int random = 1000 + rndObj.nextInt(10000 - 1000);
-		clientId = iD + random + phoneNumber.substring(3, 6);
-		//System.out.println(clientId);
-	}
-	
+		int random = 10000 + rndObj.nextInt(100000 - 10000);
+		this.clientId = random + phoneNumber.substring(3, 6);
+		this.showDate = null;
+		this.isScheduled = false;
+	};
 	
 
 	public String getName() {
@@ -56,12 +51,12 @@ public class Client implements Serializable{
 		this.address = address;
 	}
 
-	public static String getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public static void setPhoneNumber(String phoneNumber) {
-		Client.phoneNumber = phoneNumber;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	public double getBalance() {
@@ -72,28 +67,20 @@ public class Client implements Serializable{
 		this.balance = balance;
 	}
 
-	public static String getClientId() {
+	public String getClientId() {
 		return clientId;
 	}
 
 	public String toString() {
-		String clientInfo = "Name: " + name + '\n' + "Address: " + address + '\n' 
+		String clientInfo = '\n' + "Name: " + name + '\n' + "Address: " + address + '\n' 
 				+ "Phone Number: " + phoneNumber + '\n' + "Balance: " + balance
-					+ '\n' + "ID: " + clientId;
+					+ '\n' + "ID: " + clientId + '\n';
 		return clientInfo;
 	}
 	
-	public boolean setScheduled() {
-		if (performanceDate != null) {
-			scheduled = true;
-		}
-		else 
-			scheduled = false;
-		return scheduled;
+	public boolean setIsScheduled(boolean value) {
+		this.isScheduled = value;
+		return value;
 	}
-	public static void main(String args[]) {
-		Client client1 = new Client("Clint Capela", "4123 Houston Way", "5082234584");
-		Client client2 = new Client("Dan Haren", "1523 Marlin Street", "1522836875");
-		
-	}
+
 }
