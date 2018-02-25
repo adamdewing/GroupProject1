@@ -44,7 +44,7 @@ public class TheaterApplication {
 				cv.displayClientMenu();
 			} else if (option.equals("2")) {
 				CustomerView customerView = new CustomerView();
-				//customerView.displayCustomerMenu();
+				customerView.displayCustomerMenu();
 			} else if (option.equals("3")) {
 				DiskView df = new DiskView();
 				df.displayDataMenu();
