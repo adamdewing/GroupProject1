@@ -1,3 +1,4 @@
 
-# Visual Paradigm backup files
+# Visual Paradigm backup and temporary files
 *.bak_*
+*.lck
