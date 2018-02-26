@@ -1,3 +1,10 @@
+/**
+ * Description: This class serves as the adaptor class which implements all of
+ * the methods from the PushbackableTokenizer class. Additionally, the class
+ * creates and maintains a reference to the adaptee being the Stack and
+ * StringTokenizer objects.
+ */
+
 package com.metrostate.ics372.project.one;
 
 import java.io.Serializable;
@@ -20,6 +27,16 @@ public class Customer implements Serializable{
 	private String customerId;
 	private static final long serialVersionUID = 4915L;
 
+	/**
+	 * Class constructor.
+	 * @param firstName String value that represents the customers first name.
+	 * @param lastName String value that represents the customers last name.
+	 * @param streetAddress String value that represents the customers street address.
+	 * @param city String value that represents the customers city.
+	 * @param state String value that represents the customers state.
+	 * @param zipCode String value that represents the customers zip code.
+	 * @param phoneNumber String value that represents the customers phone number.
+	 */
 	public Customer(String firstName, String lastName, String streetAddress,
 					String city, String state, String zipCode, String phoneNumber) {
 		this.firstName = firstName;
