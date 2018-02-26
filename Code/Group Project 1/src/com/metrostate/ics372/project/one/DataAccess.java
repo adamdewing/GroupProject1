@@ -16,7 +16,7 @@ public interface DataAccess<E, K> {
 	 * Adds the item to the collection of items.
 	 * @param item
 	 */
-	public void add(E item);
+	public E add(E item);
 
 	/**
 	 * Returns a List of all objects of type E.
