@@ -1,6 +1,7 @@
 package com.metrostate.ics372.project.one;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -9,6 +10,7 @@ public class Show implements Serializable{
 	private Date startDate;
 	private Date endDate;
 	private String clientId;
+	private static final long serialVersionUID = 1L;
 	
 	public Show() {};
 	
@@ -59,5 +61,11 @@ public class Show implements Serializable{
 		this.endDate = endDate;
 	}
 	
-	
+	public String toString() {
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+		String showInfo = '\n' + "Name: " + showName + '\n' + "Client ID: " + clientId + '\n' 
+				+ "Show Dates: " + sdf.format(startDate) + " - " + sdf.format(endDate) 
+					+ '\n';
+		return showInfo;
+	}
 }

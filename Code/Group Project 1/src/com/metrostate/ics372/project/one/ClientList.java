@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 public class ClientList implements Serializable {
 
-	private static final long serialVersionUID = 1L;
 	private static List clients = new LinkedList();
 	private static ClientList clientList;
 	public static final int CLIENT_NOT_FOUND = 1;
@@ -176,7 +175,7 @@ public class ClientList implements Serializable {
 		if (client == null) {
 			return (CLIENT_NOT_FOUND);
 		}
-		if (!client.setIsScheduled(true)) {
+		if (!client.setIsScheduled(false)) {
 			return (CLIENT_SHOW_SCHEDULED);
 		}
 		if (clientList.deleteClient(id)) {

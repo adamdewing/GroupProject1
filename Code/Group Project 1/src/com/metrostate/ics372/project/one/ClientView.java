@@ -41,7 +41,8 @@ public class ClientView implements Serializable {
 			System.out.println("2:  Remove a Client");
 			System.out.println("3.  List All Clients");
 			System.out.println("4.  Add Showing for existing Client");
-			System.out.println("5:  Return to Main Menu");
+			System.out.println("5.  List All Shows");
+			System.out.println("6:  Return to Main Menu");
 			System.out.println(TheaterApplication.LINE_SEPARATER);
 			System.out.println("Please type an option and hit enter:");
 
@@ -58,9 +59,12 @@ public class ClientView implements Serializable {
 				clientList.listAllClients();
 			}
 			else if (option.equals("4")) {
-				
+				showList.addShow();
 			}
 			else if (option.equals("5")) {
+				showList.listAllShows();
+			}
+			else if (option.equals("6")) {
 				// Exit to the main menu
 				return;
 			} else {

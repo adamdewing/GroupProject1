@@ -12,12 +12,13 @@ import java.util.Random;
  */
 public class Client implements Serializable{
 
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private String address;
 	private String phoneNumber;
 	private double balance;
 	private String clientId;
-	private LinkedList<Show> showDate = new LinkedList<Show>();
+	private LinkedList<Show> showList = new LinkedList<Show>();
 	private boolean isScheduled;
 	
 	public Client() {};
@@ -30,7 +31,7 @@ public class Client implements Serializable{
 		Random rndObj = new Random();
 		int random = 10000 + rndObj.nextInt(100000 - 10000);
 		this.clientId = random + phoneNumber.substring(3, 6);
-		this.showDate = null;
+		//this.showDate = null;
 		this.isScheduled = false;
 	};
 	
@@ -65,6 +66,10 @@ public class Client implements Serializable{
 
 	public void setBalance(double balance) {
 		this.balance = balance;
+	}
+	
+	public void addToShowList(Show show) {
+		showList.add(show); 
 	}
 
 	public String getClientId() {

@@ -12,8 +12,7 @@ import java.text.ParseException;
 
 public class ShowList implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	private static List shows = new LinkedList();
+	private static List<Show> shows = new LinkedList();
 	private static ShowList showList;
 	private static List clients = new LinkedList();
 	private static ClientList clientList;
@@ -23,6 +22,7 @@ public class ShowList implements Serializable {
 	 * 
 	 */
 	private ShowList() {
+		clientList = ClientList.instance();
 	}
 
 	/**
@@ -38,65 +38,74 @@ public class ShowList implements Serializable {
 		}
 	}
 
-	public void addShow() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Client ID: ");
-		//Show show = new Show();
-		String id = scanner.nextLine();
-		Date startDate;
-		Date endDate;
+	/*public Client searchId(String clientId) {
 		for (Iterator iterator = clients.iterator(); iterator.hasNext();) {
 			Client client = (Client) iterator.next();
-			if (client.getClientId().equals(id)) {
+			if (client.getClientId().equals(clientId)) {
+				return client;
+			}
+		}
+		return null;
+	}*/
+	
+	public void addShow() {
+		Date startDate;
+		Date endDate;
+		String name;
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Client ID: ");
+		String id = scanner.nextLine();
+			Client client = clientList.search(id);
+			if (client == null) {
+				System.out.println("Client does not exist.");
+				return;
+			}
+			else {
+	
 				System.out.println("Enter name of show for " + client.getName() + ": ");
-				String name = scanner.nextLine();
+				name = scanner.nextLine();
+
 				do {
-				System.out.println("Enter start date(mm-dd-yyyy): ");
-				String strDate = scanner.nextLine();
-				startDate = validateDate(strDate);
-			}while (startDate == null);
+					System.out.println("Enter start date(mm/dd/yyyy): ");
+					String date1 = scanner.nextLine();
+					startDate = validateDate(date1);
+					
+				} while (startDate == null);
 				do {
-				System.out.println("Enter end date(mm-dd-yyyy): ");
-				String strDate = scanner.nextLine();
-				endDate = validateDate(strDate);
-			}while (endDate == null);
-				Show show = new Show(name, id, startDate, endDate);
-				client.setIsScheduled(true);
-				shows.add(show);
-		}
-		}
-	}
+					System.out.println("Enter end date(mm/dd/yyyy): ");
+					String date2 = scanner.nextLine();
+					endDate = validateDate(date2);
+					
+				} while (endDate == null);
 
-
-	/*
-	 * System.out.println("Enter client address: "); String newAddress =
-	 * scanner.nextLine();
-	 * System.out.println("Enter client phone number (include area code): "); String
-	 * newPhone = scanner.nextLine(); Client newClient = new Client(newName,
-	 * newAddress, newPhone); ClientList.insertClient(newClient);
-	 * System.out.println("New Client Information" + '\n' +
-	 * TheaterApplication.LINE_SEPARATER + '\n' + newClient.toString()); }
-	 */
-
-	public Date validateDate(String date){
 				
-				/*if (date.trim().equals("")) {
-					return false;
-				}
-				else {*/
-					try {
-						SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
-						sdf.setLenient(false);
-						Date inputDate = sdf.parse(date);
-						return inputDate;
-					}
-					catch(ParseException e) {
-						System.out.println("Invalid date, please enter the date in the following format: mm-dd-yyyy ");
-						return null;
-					}	
-				}
-	}
+			}
+
+			Show show = new Show(name, id, startDate, endDate);
+			client.setIsScheduled(true);
+			shows.add(show);
+			client.addToShowList(show);
+			System.out.println(
+					"Show Information" + '\n' + TheaterApplication.LINE_SEPARATER + '\n' + show.toString());
+		}
 	
 
+	public void listAllShows() {
+		for (Iterator iterator = shows.iterator(); iterator.hasNext();) {
+			Show show = (Show) iterator.next();
+			System.out.println(show.toString());
+		}
+	}
 
-
+	public Date validateDate(String date) {
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+			sdf.setLenient(false);
+			Date inputDate = sdf.parse(date);
+			return inputDate;
+		} catch (ParseException e) {
+			System.out.println("Invalid date, please enter the date in the following format: mm/dd/yyyy ");
+			return null;
+		}
+	}
+}
