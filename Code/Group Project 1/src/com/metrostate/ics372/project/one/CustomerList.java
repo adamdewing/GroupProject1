@@ -1,3 +1,10 @@
+/**
+ * Description: This class serves as the adaptor class which implements all of
+ * the methods from the PushbackableTokenizer class. Additionally, the class
+ * creates and maintains a reference to the adaptee being the Stack and
+ * StringTokenizer objects.
+ */
+
 package com.metrostate.ics372.project.one;
 
 import javax.swing.text.html.HTMLDocument;
@@ -6,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class CustomerList implements DataAccess<Customer, String>, Serializable {
+public class CustomerList implements DataAccess<Customer, String>{
 
 	private static CustomerList customerList;
 	public static List<Customer> customers = new ArrayList<Customer>();

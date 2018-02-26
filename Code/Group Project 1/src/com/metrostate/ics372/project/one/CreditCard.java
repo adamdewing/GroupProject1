@@ -1,3 +1,10 @@
+/**
+ * Description: This class serves as the adaptor class which implements all of
+ * the methods from the PushbackableTokenizer class. Additionally, the class
+ * creates and maintains a reference to the adaptee being the Stack and
+ * StringTokenizer objects.
+ */
+
 package com.metrostate.ics372.project.one;
 
 import java.io.Serializable;
@@ -12,7 +19,16 @@ public class CreditCard  implements Serializable{
     private String creditCardExpirationDate;
     private static final long serialVersionUID = 4916L;
 
-    public CreditCard(String cardOwnerId, String creditCardNumber, String creditCardExpirationDate){
+    /**
+     * Class constructor.
+     * @param cardOwnerId String value that represents the customers unique identifier.
+     * @param creditCardNumber String value that represents the customers credit
+     *                         card number.
+     * @param creditCardExpirationDate String value that represents the customers
+     *                                 credit card expiration date.
+     */
+    public CreditCard(String cardOwnerId, String creditCardNumber,
+                      String creditCardExpirationDate){
         this.cardOwnerId = cardOwnerId;
         this.creditCardNumber = creditCardNumber;
         this.creditCardExpirationDate = creditCardExpirationDate;
