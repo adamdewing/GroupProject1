@@ -16,18 +16,41 @@ public class CreditCardList implements DataAccess<CreditCard, String>, Serializa
         }
     }
 
-    @Override
-    public void add(CreditCard item) {
+    public CreditCard find(String creditCardNumber){
+        for(int i = 0; i < creditCards.size(); i++){
+            if(creditCards.get(i).getCreditCardNumber().equals(creditCardNumber)){
+                return creditCards.get(i);
+            }
+        }
+        return null;
+    }
 
+    public CreditCard remove(String creditCardNumber){
+        CreditCard removedCard = null;
+
+        for(int i = 0; i < creditCards.size(); i++){
+            if(creditCards.get(i).getCreditCardNumber().equals(creditCardNumber)){
+                removedCard = creditCards.get(i);
+                creditCards.remove(i);
+            }
+        }
+        return removedCard;
+    }
+
+    @Override
+    public void add(CreditCard newCard) {
+        for(int i = 0; i < creditCards.size(); i++){
+            if(!creditCards.get(i).getCreditCardNumber().equals(newCard.getCreditCardNumber())){
+                creditCards.add(newCard);
+                System.out.println("Successfully Added Card");
+            }else{
+                System.out.println("Failed to add card");
+            }
+        }
     }
 
     @Override
     public List<CreditCard> getAll() {
-        return null;
-    }
-
-    @Override
-    public CreditCard remove(String id) {
         return null;
     }
 

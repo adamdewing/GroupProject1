@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class CustomerView {
 
     private Customer customer;
+    private CreditCard creditCard;
     private CustomerList customerList;
     private CreditCardList creditCardList;
 
@@ -80,11 +81,15 @@ public class CustomerView {
         System.out.println("Enter credit card expiration date: ");
         String customerCreditCardExpirationDate = scanner.nextLine();
 
-        Customer customer = new Customer(customerFirstName, customerLastName,
+        customer = new Customer(customerFirstName, customerLastName,
             customerStreetAddress, customerCity, customerState, customerZipCode,
-            customerPhoneNumber, customerCreditCard, customerCreditCardExpirationDate);
+            customerPhoneNumber);
+
+        creditCard = new CreditCard(customer.getCustomerId(), customerCreditCard,
+                customerCreditCardExpirationDate);
 
         customerList.add(customer);
+        creditCardList.add(creditCard);
 
         try {
             System.out.println(TheaterApplication.LINE_SEPARATER + "\n" +

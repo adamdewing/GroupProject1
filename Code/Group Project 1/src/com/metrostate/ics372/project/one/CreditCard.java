@@ -22,6 +22,14 @@ public class CreditCard  implements Serializable{
         return creditCardNumber;
     }
 
+    public String getCardOwnerId() {
+        return cardOwnerId;
+    }
+
+    public String getCreditCardExpirationDate() {
+        return creditCardExpirationDate;
+    }
+
     public String toString(){
         return "Credit Card Number: " + this.creditCardNumber + "\n" +
                 "Credit Card Expiration Date: " + this.creditCardExpirationDate + "\n";
