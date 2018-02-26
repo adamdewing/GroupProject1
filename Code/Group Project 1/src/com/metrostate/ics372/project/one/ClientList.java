@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ClientList implements Serializable {
+public class ClientList implements DataAccess<Client, String>, Serializable {
 
 	private static List clients = new LinkedList();
 	private static ClientList clientList;
@@ -182,6 +182,28 @@ public class ClientList implements Serializable {
 			return (CLIENT_REMOVED);
 		}
 		return OPERATION_FAILED;
+	}
+
+	@Override
+	public Client add(Client item) {
+		clients.add(item);
+		return item;
+	}
+
+	@Override
+	public List<Client> getAll() {
+		return clients;
+	}
+
+	@Override
+	public Client remove(String id) {
+		return search(id);
+	}
+
+	@Override
+	public void removeAll() {
+		clients = new LinkedList();
+		
 	}
 
 }
