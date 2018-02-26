@@ -29,10 +29,14 @@ public class DiskStorageController implements DataStorage {
 			fis.close();
 		} catch (FileNotFoundException e) {
 			status = Status.FILE_NOT_FOUND;
-			e.printStackTrace();
+			if(TheaterApplication.isDebugMode) {
+				e.printStackTrace();
+			}
 		} catch (IOException e) {
 			status = Status.ERROR_EMPTYING_DATA_FILE;
-			e.printStackTrace();
+			if(TheaterApplication.isDebugMode) {
+				e.printStackTrace();
+			}
 		}
 		return status;
 	}
@@ -43,8 +47,6 @@ public class DiskStorageController implements DataStorage {
 		ObjectInputStream ois = null;
 		boolean isInputStreamClosed = false;
 
-		emptyFile();
-		
 		try {
 			FileInputStream fis = new FileInputStream(FILE_NAME);
 			ois = new ObjectInputStream(fis);
@@ -54,14 +56,20 @@ public class DiskStorageController implements DataStorage {
 			isInputStreamClosed = true;
 
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			if(TheaterApplication.isDebugMode) {
+				e.printStackTrace();
+			}
 			status = Status.FILE_NOT_FOUND;
 		} catch (IOException e) {
-			e.printStackTrace();
+			if(TheaterApplication.isDebugMode) {
+				e.printStackTrace();
+			}
 			status = Status.ERROR_LOADING_FROM_DISK;
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-			status = Status.ERROR_LOADING_FROM_DISK;
+			if(TheaterApplication.isDebugMode) {
+				e.printStackTrace();
+			}
+			status = Status.UNKNOWN_CLASS;
 		} finally {
 			if (ois != null && !isInputStreamClosed) {
 				try {
@@ -159,6 +167,9 @@ public class DiskStorageController implements DataStorage {
 		Status status;
 		ObjectOutputStream oos = null;
 		boolean isOutputStreamClosed = false;
+		
+		emptyFile();
+		
 		try {
 			List<Customer> customers = CustomerList.instance().getAll();
 			List<CreditCard> creditCards = CreditCardList.instance().getAll();
@@ -176,10 +187,14 @@ public class DiskStorageController implements DataStorage {
 			isOutputStreamClosed = true;
 			status = Status.OK;
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			if(TheaterApplication.isDebugMode) {
+				e.printStackTrace();
+			}
 			status = Status.FILE_NOT_FOUND;
 		} catch (IOException e) {
-			e.printStackTrace();
+			if(TheaterApplication.isDebugMode) {
+				e.printStackTrace();
+			}
 			status = Status.ERROR_WRITING_TO_DISK;
 		} finally {
 			if (oos != null && !isOutputStreamClosed) {

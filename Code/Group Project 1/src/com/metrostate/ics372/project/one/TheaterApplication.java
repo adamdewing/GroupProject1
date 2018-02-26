@@ -1,7 +1,5 @@
 package com.metrostate.ics372.project.one;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -22,8 +20,9 @@ public class TheaterApplication {
 	private ClientView clientVew = new ClientView();
 	private DataStorageView dataStorageView = new DataStorageView();
 	
-
+	//Flags --------------------------------------------------------
 	private boolean useOldMenu = false;
+	public static boolean isDebugMode = false;
 	
 	public static void main(String[] args) {
 		TheaterApplication app = new TheaterApplication();
