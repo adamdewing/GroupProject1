@@ -53,20 +53,19 @@ public class CreditCardList implements DataAccess<CreditCard, String>, Serializa
     }
 
     @Override
-    public void add(CreditCard newCard) {
+    public CreditCard add(CreditCard newCard) {
         for(int i = 0; i < creditCards.size(); i++){
             if(!creditCards.get(i).getCreditCardNumber().equals(newCard.getCreditCardNumber())){
                 creditCards.add(newCard);
-                System.out.println("Successfully Added Card");
-            }else{
-                System.out.println("Failed to add card");
+                return newCard;
             }
         }
+        return null;
     }
 
     @Override
     public List<CreditCard> getAll() {
-        return null;
+        return creditCards;
     }
 
     @Override

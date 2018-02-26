@@ -130,7 +130,13 @@ public class CustomerView {
         String creditCardExpirationDate = scanner.nextLine();
 
         creditCard = new CreditCard(customerId, creditCardNumber, creditCardExpirationDate);
-        creditCardList.add(creditCard);
+        creditCard = creditCardList.add(creditCard);
+
+        if(creditCard != null){
+            System.out.println("Successfully added credit card");
+        }else{
+            System.out.println("Failed to add credit card");
+        };
     }
 
     public void removeCreditCard(){
@@ -139,7 +145,13 @@ public class CustomerView {
         System.out.println("Enter a credit card number: ");
         String creditCardNumber = scanner.nextLine();
 
-        creditCardList.remove(creditCardNumber);
+        creditCard = creditCardList.remove(creditCardNumber);
+
+        if(creditCard != null){
+            System.out.println("Successfully removed credit card");
+        }else{
+            System.out.println("Failed to remove credit card");
+        };
     }
 
     public void listAllCustomers(){

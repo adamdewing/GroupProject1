@@ -29,8 +29,9 @@ public class CustomerList implements DataAccess<Customer, String>, Serializable 
 	}
 
 	@Override
-	public void add(Customer item) {
+	public Customer add(Customer item) {
 		customers.add(item);
+		return null;
 	}
 
 	@Override
