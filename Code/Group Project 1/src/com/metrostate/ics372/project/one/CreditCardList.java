@@ -2,6 +2,7 @@ package com.metrostate.ics372.project.one;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CreditCardList implements DataAccess<CreditCard, String>, Serializable {
@@ -26,15 +27,29 @@ public class CreditCardList implements DataAccess<CreditCard, String>, Serializa
     }
 
     public CreditCard remove(String creditCardNumber){
-        CreditCard removedCard = null;
+        String cardOwnerId = null;
+        int ownerCardCount = 0;
+        int targetCardIndex = 0;
+        CreditCard targetCard = null;
 
         for(int i = 0; i < creditCards.size(); i++){
             if(creditCards.get(i).getCreditCardNumber().equals(creditCardNumber)){
-                removedCard = creditCards.get(i);
-                creditCards.remove(i);
+                targetCard = creditCards.get(i);
+                cardOwnerId = creditCards.get(i).getCardOwnerId();
             }
         }
-        return removedCard;
+
+        for(int i = 0; i < creditCards.size(); i++){
+            if(creditCards.get(i).getCardOwnerId().equals(cardOwnerId)){
+                ownerCardCount++;
+            }
+        }
+
+        if(targetCard != null && ownerCardCount > 1){
+            creditCards.remove(targetCardIndex);
+        }
+
+        return targetCard;
     }
 
     @Override

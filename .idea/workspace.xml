@@ -20,12 +20,10 @@
       <file leaf-file-name="CustomerView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="421">
+              <caret line="132" column="39" lean-forward="false" selection-start-line="132" selection-start-column="39" selection-end-line="132" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4450#4451#0" expanded="true" />
-                <element signature="e#4506#4507#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -34,8 +32,8 @@
       <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+            <state relative-caret-position="241">
+              <caret line="20" column="55" lean-forward="true" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#940#941#0" expanded="true" />
@@ -62,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreditCard.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CreditCard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state relative-caret-position="170">
+              <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
               <folding>
                 <element signature="e#660#661#0" expanded="true" />
                 <element signature="e#699#700#0" expanded="true" />
@@ -77,16 +75,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreditCardList.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CreditCardList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCardList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+            <state relative-caret-position="659">
+              <caret line="68" column="20" lean-forward="true" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#323#335#0" expanded="true" />
-                <element signature="e#1686#1687#0" expanded="true" />
-                <element signature="e#1713#1714#0" expanded="true" />
+                <element signature="e#353#365#0" expanded="true" />
+                <element signature="e#2141#2142#0" expanded="true" />
+                <element signature="e#2168#2169#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,10 +118,10 @@
         <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/Client.java" />
         <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/ClientView.java" />
         <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerList.java" />
-        <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerView.java" />
-        <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCard.java" />
         <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/Customer.java" />
+        <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCard.java" />
         <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCardList.java" />
+        <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerView.java" />
       </list>
     </option>
   </component>
@@ -323,12 +321,12 @@
       <workItem from="1519261048657" duration="234000" />
       <workItem from="1519310497537" duration="2375000" />
       <workItem from="1519396372900" duration="659000" />
-      <workItem from="1519429358668" duration="36639000" />
+      <workItem from="1519429358668" duration="39436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43592000" />
+    <option name="totallyTimeSpent" value="46389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -409,8 +407,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4450#4451#0" expanded="true" />
-            <element signature="e#4506#4507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -437,8 +433,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4450#4451#0" expanded="true" />
-            <element signature="e#4506#4507#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -556,31 +550,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4450#4451#0" expanded="true" />
-            <element signature="e#4506#4507#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCardList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#323#335#0" expanded="true" />
-            <element signature="e#1686#1687#0" expanded="true" />
-            <element signature="e#1713#1714#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -598,8 +567,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+        <state relative-caret-position="241">
+          <caret line="20" column="55" lean-forward="true" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#940#941#0" expanded="true" />
@@ -610,13 +579,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="170">
+          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding>
             <element signature="e#660#661#0" expanded="true" />
             <element signature="e#699#700#0" expanded="true" />
             <element signature="e#737#738#0" expanded="true" />
             <element signature="e#771#772#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="132" column="39" lean-forward="false" selection-start-line="132" selection-start-column="39" selection-end-line="132" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCardList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="68" column="20" lean-forward="true" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#353#365#0" expanded="true" />
+            <element signature="e#2141#2142#0" expanded="true" />
+            <element signature="e#2168#2169#0" expanded="true" />
           </folding>
         </state>
       </provider>

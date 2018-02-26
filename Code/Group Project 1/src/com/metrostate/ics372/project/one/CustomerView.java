@@ -102,7 +102,7 @@ public class CustomerView {
 
     public void removeCustomer(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter Customer ID: ");
+        System.out.println("Enter a Customer ID: ");
         String customerId = scanner.nextLine();
         Customer removedCustomer = customerList.remove(customerId);
         if(removedCustomer != null){
@@ -119,6 +119,18 @@ public class CustomerView {
 
     public void addCreditCard(){
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a Customer ID: ");
+        String customerId = scanner.nextLine();
+
+        System.out.println("Enter credit card number: ");
+        String creditCardNumber = scanner.nextLine();
+
+        System.out.println("Enter credit card expiration date: ");
+        String creditCardExpirationDate = scanner.nextLine();
+
+        creditCard = new CreditCard(customerId, creditCardNumber, creditCardExpirationDate);
+        creditCardList.add(creditCard);
     }
 
     public void removeCreditCard(){
@@ -127,8 +139,7 @@ public class CustomerView {
         System.out.println("Enter a credit card number: ");
         String creditCardNumber = scanner.nextLine();
 
-        System.out.println(customer.removeCreditCard(creditCardNumber) +
-                TheaterApplication.LINE_SEPARATER);
+        creditCardList.remove(creditCardNumber);
     }
 
     public void listAllCustomers(){
