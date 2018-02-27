@@ -86,15 +86,11 @@ public class CreditCardList implements DataAccess<CreditCard, String>, Modified{
         boolean ownerExists = false;
         boolean cardExists = false;
 
-        if(creditCards.size() == 0){
-            creditCards.add(newCard);
-            return newCard;
+        if(CustomerList.instance().findCustomer(newCard.getCardOwnerId()) != null) {
+        	ownerExists = true;
         }
-
+        
         for(int i = 0; i < creditCards.size(); i++){
-            if(creditCards.get(i).getCardOwnerId().equals(newCard.getCardOwnerId())){
-                ownerExists = true;
-            }
             if(creditCards.get(i).getCreditCardNumber().equals(newCard.getCreditCardNumber())){
                 cardExists = true;
             }
