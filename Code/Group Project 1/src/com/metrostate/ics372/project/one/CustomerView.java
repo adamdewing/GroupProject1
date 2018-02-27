@@ -96,8 +96,20 @@ public class CustomerView {
             creditCard = new CreditCard(customer.getCustomerId(), customerCreditCard,
                     customerCreditCardExpirationDate);
 
-            customerList.add(customer);
-            creditCardList.add(creditCard);
+            if(customerList.findCustomer(customer.getCustomerId()) != null) {
+            	System.out.println("Cannot add customer as customer already exists!");
+            	pressEnterKeyToContinue();
+            	return;
+            }else {
+            	customerList.add(customer);
+            }
+            if(creditCardList.find(creditCard.getCreditCardNumber()) != null) {
+            	System.out.println("Cannot add customer as credit card already exists in the system!");
+            	pressEnterKeyToContinue();
+            	return;
+            }else {
+            	creditCardList.add(creditCard);
+            }
 
             System.out.println(TheaterApplication.LINE_SEPARATER + "\n" +
                     "New customer added \n" + TheaterApplication.LINE_SEPARATER +

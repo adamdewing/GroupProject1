@@ -38,14 +38,8 @@ public class TheaterApplication {
 		
 		Scanner scanner = new Scanner(System.in);
 		String option;
-<<<<<<< HEAD
-		while (true) {
-			System.out.println("");
-			System.out.println(LINE_SEPARATER);
-=======
 		while(true) {
 			clearPage();
->>>>>>> branch 'master' of https://github.com/adamdewing/GroupProject1.git
 			System.out.println("Theater Application");
 			System.out.println(LINE_SEPARATER);
 			System.out.println("0:  Exit Application.");
@@ -114,15 +108,8 @@ public class TheaterApplication {
 		}
 
 	}
-<<<<<<< HEAD
-
-	private void pressAnyKeyToContinue() {
-		System.out.println("Press any key to continue...");
-=======
-	
 	private void pressEnterKeyToContinue() {
 		System.out.println("Press the ENTER key to continue...");
->>>>>>> branch 'master' of https://github.com/adamdewing/GroupProject1.git
 		try {
 			System.in.read();
 		} catch (Exception e) {

@@ -28,7 +28,7 @@ public class CustomerList implements DataAccess<Customer, String>, Modified{
 	public Customer add(Customer item) {
 		customers.add(item);
 		isModified = true;
-		return null;
+		return item;
 	}
 
 	public Customer findCustomer(String id){
