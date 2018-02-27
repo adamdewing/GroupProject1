@@ -1,12 +1,11 @@
 package com.metrostate.ics372.project.one;
 
 
-import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 
 /**
@@ -15,7 +14,7 @@ import java.util.Date;
  * @author xiong
  *
  */
-public class ClientView implements Serializable {
+public class ClientView{
 	public static final int CLIENT_NOT_FOUND = 1;
 	public static final int CLIENT_REMOVED = 2;
 	public static final int CLIENT_SHOW_SCHEDULED = 3;
