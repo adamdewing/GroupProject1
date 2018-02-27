@@ -1,8 +1,7 @@
 /**
- * Description: This class serves as the adaptor class which implements all of
- * the methods from the PushbackableTokenizer class. Additionally, the class
- * creates and maintains a reference to the adaptee being the Stack and
- * StringTokenizer objects.
+ * Description: This class serves as a means to store Customer objects. This
+ * class is used to retrieve any of the existing customers in the system. It should
+ * be noted that this class implements the Data Access and Modified interfaces.
  */
 
 package com.metrostate.ics372.project.one;

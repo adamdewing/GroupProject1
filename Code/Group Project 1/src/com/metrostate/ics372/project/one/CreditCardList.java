@@ -1,8 +1,8 @@
 /**
- * Description: This class serves as the adaptor class which implements all of
- * the methods from the PushbackableTokenizer class. Additionally, the class
- * creates and maintains a reference to the adaptee being the Stack and
- * StringTokenizer objects.
+ * Description: This class serves as a means to store Credit Card objects. This
+ * class is used to retrieve any of the existing credit cards in the system.It
+ * should be noted that this class implements the Data Access and Modified
+ * interfaces.
  */
 
 package com.metrostate.ics372.project.one;
@@ -43,9 +43,9 @@ public class CreditCardList implements DataAccess<CreditCard, String>, Modified{
     }
 
     /**
-     * Method
-     * @param creditCardNumber
-     * @return
+     * Method which removes an existing credit card.
+     * @param creditCardNumber String value that represents a credit card number.
+     * @return CreditCard object.
      */
     public CreditCard remove(String creditCardNumber){
         String cardOwnerId = null;
@@ -75,6 +75,12 @@ public class CreditCardList implements DataAccess<CreditCard, String>, Modified{
         return null;
     }
 
+    /**
+     * Method which adds an existing credit card. Forced implementation from
+     * the DataAccess interface.
+     * @param newCard Represents a CreditCard object.
+     * @return CreditCard object.
+     */
     @Override
     public CreditCard add(CreditCard newCard) {
         boolean ownerExists = false;
@@ -103,17 +109,28 @@ public class CreditCardList implements DataAccess<CreditCard, String>, Modified{
         }
     }
 
+    /**
+     * Method which retrieves and returns a List of type CreditCard holding all
+     * existing CreditCard objects on file.
+     * @return List<CreditCard>
+     */
     @Override
     public List<CreditCard> getAll() {
         return creditCards;
     }
 
+    /**
+     * Method which removes all existing CreditCards within the creditCards List.
+     */
     @Override
     public void removeAll() {
     	creditCards = new ArrayList<CreditCard>();
     	isModified = true;
     }
 
+    /**
+     * Displays all of the existing CreditCards within the creditCards List.
+     */
     public void printAll() {
         for(int i = 0; i < creditCards.size(); i++){
             System.out.println(creditCards.get(i).toString());

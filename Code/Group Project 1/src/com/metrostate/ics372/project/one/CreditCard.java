@@ -1,8 +1,6 @@
 /**
- * Description: This class serves as the adaptor class which implements all of
- * the methods from the PushbackableTokenizer class. Additionally, the class
- * creates and maintains a reference to the adaptee being the Stack and
- * StringTokenizer objects.
+ * Description: This class serves as the means of identifying a real world
+ * credit card and as such holds variables to identify a credit card and its owner.
  */
 
 package com.metrostate.ics372.project.one;
@@ -34,6 +32,7 @@ public class CreditCard  implements Serializable{
         this.creditCardExpirationDate = creditCardExpirationDate;
     }
 
+    //Getters and Setters for class variables.
     public String getCreditCardNumber() {
         return creditCardNumber;
     }
@@ -46,6 +45,7 @@ public class CreditCard  implements Serializable{
         return creditCardExpirationDate;
     }
 
+    //Modification of the standard toString method.
     public String toString(){
         return "Credit Card Number: " + this.creditCardNumber + "\n" +
                 "Credit Card Expiration Date: " + this.creditCardExpirationDate + "\n";

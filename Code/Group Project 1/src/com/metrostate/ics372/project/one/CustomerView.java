@@ -1,8 +1,6 @@
 /**
- * Description: This class serves as the adaptor class which implements all of
- * the methods from the PushbackableTokenizer class. Additionally, the class
- * creates and maintains a reference to the adaptee being the Stack and
- * StringTokenizer objects.
+ * Description: This class serves as a central class to handle interactions
+ * between the user and the system.
  */
 
 package com.metrostate.ics372.project.one;
@@ -17,11 +15,19 @@ public class CustomerView {
     private CustomerList customerList;
     private CreditCardList creditCardList;
 
+    /**
+     * Class constructor which creates instances of the CustomerList and
+     * CreditCardList classes.
+     */
     public CustomerView(){
         customerList = CustomerList.instance();
         creditCardList = CreditCardList.instance();
     }
 
+    /**
+     * Displays menu options to the user. This is a pass through method which
+     * calls further methods based on the users input.
+     */
     public void displayCustomerMenu(){
         Scanner scanner = new Scanner(System.in);
         String option;
@@ -56,6 +62,10 @@ public class CustomerView {
         }while(true);
     }
 
+    /**
+     * Method which calls the appropriate methods to add a new customer. Logic
+     * for the success or failure display is handled within this method.
+     */
     public void addCustomer(){
         Scanner scanner = new Scanner(System.in);
 
@@ -120,6 +130,10 @@ public class CustomerView {
         pressEnterKeyToContinue();
     }
 
+    /**
+     * Method which calls the appropriate methods to remove a customer. Logic
+     * for the success or failure display is handled within this method.
+     */
     public void removeCustomer(){
         Scanner scanner = new Scanner(System.in);
         TheaterApplication.clearPage();
@@ -139,6 +153,10 @@ public class CustomerView {
         pressEnterKeyToContinue();
     }
 
+    /**
+     * Method which calls the appropriate methods to add a new credit card. Logic
+     * for the success or failure display is handled within this method.
+     */
     public void addCreditCard(){
         Scanner scanner = new Scanner(System.in);
         TheaterApplication.clearPage();
@@ -167,6 +185,10 @@ public class CustomerView {
         pressEnterKeyToContinue();
     }
 
+    /**
+     * Method which calls the appropriate methods to remove a credit card. Logic
+     * for the success or failure display is handled within this method.
+     */
     public void removeCreditCard(){
         Scanner scanner = new Scanner(System.in);
         TheaterApplication.clearPage();
@@ -188,6 +210,9 @@ public class CustomerView {
         pressEnterKeyToContinue();
     }
 
+    /**
+     * Method which calls the appropriate methods display all customers on file.
+     */
     public void listAllCustomers(){
     	TheaterApplication.clearPage();
         System.out.println(TheaterApplication.LINE_SEPARATER + "\n" +
@@ -199,7 +224,7 @@ public class CustomerView {
         System.out.println(TheaterApplication.LINE_SEPARATER);
         pressEnterKeyToContinue();
     }
-    
+
 	private void pressEnterKeyToContinue() {
 		System.out.println("Press the ENTER key to continue...");
 		try {

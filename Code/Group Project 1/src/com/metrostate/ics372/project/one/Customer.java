@@ -1,8 +1,6 @@
 /**
- * Description: This class serves as the adaptor class which implements all of
- * the methods from the PushbackableTokenizer class. Additionally, the class
- * creates and maintains a reference to the adaptee being the Stack and
- * StringTokenizer objects.
+ * Description: This class serves as the means of identifying a real world
+ * customer.
  */
 
 package com.metrostate.ics372.project.one;
@@ -49,10 +47,15 @@ public class Customer implements Serializable{
 		this.customerId = generateCustomerId();
 	}
 
+	//Getters and Setters for class variables.
 	public String getCustomerId() {
 		return customerId;
 	}
 
+	/**
+	 * Method which generates a unique id for the customer.
+	 * @return String value representing a unique id.
+	 */
 	private String generateCustomerId(){
 		Random random = new Random();
 		int randomNumber = 1000 + random.nextInt(10000 - 1000);
@@ -63,6 +66,7 @@ public class Customer implements Serializable{
 				new Random().nextInt(1000000 - 100000);
 	}
 
+	//Modification of the standard toString method.
 	public String toString(){
 
 		return "Customer ID: " + this.customerId + "\n" +
