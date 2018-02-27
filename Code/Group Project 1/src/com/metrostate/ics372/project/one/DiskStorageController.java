@@ -60,10 +60,10 @@ public class DiskStorageController implements DataStorage {
 	 * @return true if the data has been modified in the session.
 	 */
 	private boolean isDataModified() {
-		if(CustomerList.instance().isModified() || CreditCardList.instance().isModified()) {
+		if(CustomerList.instance().isModified() || CreditCardList.instance().isModified()
+				|| ClientList.instance().isModified() || ShowList.instance().isModified()) {
 			return true;
 		}
-		//TODO check for Clients, and Shows
 		return false;
 	}
 
@@ -156,7 +156,6 @@ public class DiskStorageController implements DataStorage {
 		//Add CreditCard objects
 		for(CreditCard creditCard : creditCards) {
 			CreditCardList.instance().add(creditCard);
-			System.out.println(creditCard.toString());
 		}
 		
 		//Add Show objects
@@ -197,6 +196,8 @@ public class DiskStorageController implements DataStorage {
 	private void resetIsModifiedFlags() {
 		CustomerList.instance().resetModifiedFlag();
 		CreditCardList.instance().resetModifiedFlag();
+		ClientList.instance().resetModifiedFlag();
+		ShowList.instance().resetModifiedFlag();
 	}
 
 	@Override
