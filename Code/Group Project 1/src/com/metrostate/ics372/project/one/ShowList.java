@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.text.ParseException;
 
-public class ShowList implements Serializable {
+public class ShowList implements DataAccess<Show, String>, Serializable {
 
 	private static List<Show> shows = new LinkedList();
 	private static ShowList showList;
@@ -93,5 +93,32 @@ public class ShowList implements Serializable {
 			System.out.println("Invalid date, please enter the date in the following format: mm/dd/yyyy ");
 			return null;
 		}
+	}
+
+	@Override
+	public Show add(Show item) {
+		shows.add(item);
+		return item;
+	}
+
+	@Override
+	public List<Show> getAll() {
+		return shows;
+	}
+
+	@Override
+	public Show remove(String showName) {
+		for (Iterator iterator = shows.iterator(); iterator.hasNext();) {
+			Show show = (Show) iterator.next();
+			if (show.getShowName().equals(showName)) {
+				return show;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public void removeAll() {
+		shows = new LinkedList();
 	}
 }
