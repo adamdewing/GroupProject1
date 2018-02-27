@@ -1,6 +1,5 @@
 package com.metrostate.ics372.project.one;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
