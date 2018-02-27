@@ -14,7 +14,7 @@ public class ShowList implements Serializable {
 
 	private static List<Show> shows = new LinkedList();
 	private static ShowList showList;
-	private static List clients = new LinkedList();
+	//private static List clients = new LinkedList();
 	private static ClientList clientList;
 
 	/*
@@ -22,7 +22,6 @@ public class ShowList implements Serializable {
 	 * 
 	 */
 	private ShowList() {
-		clientList = ClientList.instance();
 	}
 
 	/**
@@ -38,16 +37,7 @@ public class ShowList implements Serializable {
 		}
 	}
 
-	/*public Client searchId(String clientId) {
-		for (Iterator iterator = clients.iterator(); iterator.hasNext();) {
-			Client client = (Client) iterator.next();
-			if (client.getClientId().equals(clientId)) {
-				return client;
-			}
-		}
-		return null;
-	}*/
-	
+
 	public void addShow() {
 		Date startDate;
 		Date endDate;
@@ -55,40 +45,36 @@ public class ShowList implements Serializable {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Client ID: ");
 		String id = scanner.nextLine();
-			Client client = clientList.search(id);
-			if (client == null) {
-				System.out.println("Client does not exist.");
-				return;
-			}
-			else {
-	
-				System.out.println("Enter name of show for " + client.getName() + ": ");
-				name = scanner.nextLine();
+		Client client = clientList.search(id);
+		if (client == null) {
+			System.out.println("Client does not exist.");
+			return;
+		} else {
 
-				do {
-					System.out.println("Enter start date(mm/dd/yyyy): ");
-					String date1 = scanner.nextLine();
-					startDate = validateDate(date1);
-					
-				} while (startDate == null);
-				do {
-					System.out.println("Enter end date(mm/dd/yyyy): ");
-					String date2 = scanner.nextLine();
-					endDate = validateDate(date2);
-					
-				} while (endDate == null);
+			System.out.println("Enter name of show for " + client.getName() + ": ");
+			name = scanner.nextLine();
 
-				
-			}
+			do {
+				System.out.println("Enter start date(mm/dd/yyyy): ");
+				String date1 = scanner.nextLine();
+				startDate = validateDate(date1);
 
-			Show show = new Show(name, id, startDate, endDate);
-			client.setIsScheduled(true);
-			shows.add(show);
-			client.addToShowList(show);
-			System.out.println(
-					"Show Information" + '\n' + TheaterApplication.LINE_SEPARATER + '\n' + show.toString());
+			} while (startDate == null);
+			do {
+				System.out.println("Enter end date(mm/dd/yyyy): ");
+				String date2 = scanner.nextLine();
+				endDate = validateDate(date2);
+
+			} while (endDate == null);
+
 		}
-	
+
+		Show show = new Show(name, id, startDate, endDate);
+		client.setIsScheduled(true);
+		shows.add(show);
+		client.addToShowList(show);
+		System.out.println("Show Information" + '\n' + TheaterApplication.LINE_SEPARATER + '\n' + show.toString());
+	}
 
 	public void listAllShows() {
 		for (Iterator iterator = shows.iterator(); iterator.hasNext();) {
