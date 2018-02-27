@@ -51,7 +51,7 @@ public class TheaterApplication {
 			System.out.println("9:  Add a " + SHOW + ":");
 			System.out.println("10:  List all " + SHOW + "s:");
 			System.out.println("11:  Store " + DATA + ":");
-			System.out.println("12:  Retrive " + DATA + ":");
+			System.out.println("12:  Retrieve " + DATA + ":");
 			System.out.println("13:  Help:");
 			System.out.println(LINE_SEPARATER);
 			System.out.println(LINE_SEPARATER);

@@ -88,17 +88,17 @@ public class CustomerView {
         System.out.println("Enter credit card expiration date: ");
         String customerCreditCardExpirationDate = scanner.nextLine();
 
-        customer = new Customer(customerFirstName, customerLastName,
-            customerStreetAddress, customerCity, customerState, customerZipCode,
-            customerPhoneNumber);
-
-        creditCard = new CreditCard(customer.getCustomerId(), customerCreditCard,
-                customerCreditCardExpirationDate);
-
-        customerList.add(customer);
-        creditCardList.add(creditCard);
-
         try {
+            customer = new Customer(customerFirstName, customerLastName,
+                    customerStreetAddress, customerCity, customerState, customerZipCode,
+                    customerPhoneNumber);
+
+            creditCard = new CreditCard(customer.getCustomerId(), customerCreditCard,
+                    customerCreditCardExpirationDate);
+
+            customerList.add(customer);
+            creditCardList.add(creditCard);
+
             System.out.println(TheaterApplication.LINE_SEPARATER + "\n" +
                     "New customer added \n" + TheaterApplication.LINE_SEPARATER +
                     "\n" + customer.toString() + TheaterApplication.LINE_SEPARATER);
@@ -144,6 +144,9 @@ public class CustomerView {
         }else{
             System.out.println("Failed to add credit card");
         };
+
+        System.out.println("Cards on File: \n");
+        creditCardList.printAll();
     }
 
     public void removeCreditCard(){
@@ -159,6 +162,9 @@ public class CustomerView {
         }else{
             System.out.println("Failed to remove credit card");
         }
+
+        System.out.println("Cards on File: \n");
+        creditCardList.printAll();
     }
 
     public void listAllCustomers(){
