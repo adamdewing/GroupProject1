@@ -16,16 +16,34 @@ public class TheaterApplication {
 	public static final String SHOW = "Show";
 	public static final String DATA = "Data";
 
-	private CustomerView customerView = new CustomerView();
-	private ClientView clientView = new ClientView();
-	private DataStorageView dataStorageView = new DataStorageView();
-
 	// Flags --------------------------------------------------------
 	public static boolean isDebugMode = false;
-
+	public static void clearPage() {
+		for(int i = 0; i < 30; i++) {
+			System.out.println(System.lineSeparator());
+		}
+	}
 	public static void main(String[] args) {
 		TheaterApplication app = new TheaterApplication();
 		app.startApplication();
+	}
+
+	private CustomerView customerView = new CustomerView();
+
+	private ClientView clientView = new ClientView();
+
+	private DataStorageView dataStorageView = new DataStorageView();
+	private void exit() {
+		System.exit(0);
+	}
+
+	private void pressEnterKeyToContinue() {
+		System.out.println("Press the ENTER key to continue...");
+		try {
+			System.in.read();
+		} catch (Exception e) {
+			// ignore any exceptions
+		}
 	}
 
 	private void startApplication() {
@@ -102,24 +120,6 @@ public class TheaterApplication {
 			}
 		}
 
-	}
-	private void pressEnterKeyToContinue() {
-		System.out.println("Press the ENTER key to continue...");
-		try {
-			System.in.read();
-		} catch (Exception e) {
-			// ignore any exceptions
-		}
-	}
-
-	private void exit() {
-		System.exit(0);
-	}
-
-	public static void clearPage() {
-		for(int i = 0; i < 30; i++) {
-			System.out.println(System.lineSeparator());
-		}
 	}
 
 }
