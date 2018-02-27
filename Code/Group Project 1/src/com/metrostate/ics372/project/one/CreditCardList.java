@@ -51,13 +51,11 @@ public class CreditCardList implements DataAccess<CreditCard, String>{
     public CreditCard remove(String creditCardNumber){
         String cardOwnerId = null;
         int ownerCardCount = 0;
-        int targetCardIndex = 0;
-        CreditCard targetCard = null;
+        int targetCardIndex = -1;
 
         for(int i = 0; i < creditCards.size(); i++){
             if(creditCards.get(i).getCreditCardNumber().equals(creditCardNumber)){
                 targetCardIndex = i;
-                targetCard = creditCards.get(i);
                 cardOwnerId = creditCards.get(i).getCardOwnerId();
             }
         }
@@ -68,9 +66,10 @@ public class CreditCardList implements DataAccess<CreditCard, String>{
             }
         }
 
-        if(targetCard != null && ownerCardCount > 1){
+        if(targetCardIndex >=0 && ownerCardCount > 1){
+            CreditCard tempCard = creditCards.get(targetCardIndex);
             creditCards.remove(targetCardIndex);
-            return targetCard;
+            return tempCard;
         }
 
         return null;
@@ -78,18 +77,29 @@ public class CreditCardList implements DataAccess<CreditCard, String>{
 
     @Override
     public CreditCard add(CreditCard newCard) {
-        if(creditCards.isEmpty()){
+        boolean ownerExists = false;
+        boolean cardExists = false;
+
+        if(creditCards.size() == 0){
             creditCards.add(newCard);
             return newCard;
         }
 
         for(int i = 0; i < creditCards.size(); i++){
-            if(!creditCards.get(i).getCreditCardNumber().equals(newCard.getCreditCardNumber())){
-                creditCards.add(newCard);
-                return newCard;
+            if(creditCards.get(i).getCardOwnerId().equals(newCard.getCardOwnerId())){
+                ownerExists = true;
+            }
+            if(creditCards.get(i).getCreditCardNumber().equals(newCard.getCreditCardNumber())){
+                cardExists = true;
             }
         }
-        return null;
+
+        if(ownerExists && !cardExists){
+            creditCards.add(newCard);
+            return newCard;
+        }else{
+            return null;
+        }
     }
 
     @Override

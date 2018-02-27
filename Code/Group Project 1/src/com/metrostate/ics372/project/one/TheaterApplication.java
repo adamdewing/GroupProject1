@@ -34,11 +34,18 @@ public class TheaterApplication {
 	}
 
 	private void startApplication() {
+		dataStorageView.retrieveOnStartup();
+		
 		Scanner scanner = new Scanner(System.in);
 		String option;
+<<<<<<< HEAD
 		while (true) {
 			System.out.println("");
 			System.out.println(LINE_SEPARATER);
+=======
+		while(true) {
+			clearPage();
+>>>>>>> branch 'master' of https://github.com/adamdewing/GroupProject1.git
 			System.out.println("Theater Application");
 			System.out.println(LINE_SEPARATER);
 			System.out.println("0:  Exit Application.");
@@ -53,7 +60,7 @@ public class TheaterApplication {
 			System.out.println("9:  Add a " + SHOW + ":");
 			System.out.println("10:  List all " + SHOW + "s:");
 			System.out.println("11:  Store " + DATA + ":");
-			System.out.println("12:  Retrive " + DATA + ":");
+			System.out.println("12:  Retrieve " + DATA + ":");
 			System.out.println("13:  Help:");
 			System.out.println(LINE_SEPARATER);
 			System.out.println(LINE_SEPARATER);
@@ -102,14 +109,20 @@ public class TheaterApplication {
 				// Help
 			} else {
 				System.out.println("The entry of " + option + " is an invalid option.");
-				pressAnyKeyToContinue();
+				pressEnterKeyToContinue();
 			}
 		}
 
 	}
+<<<<<<< HEAD
 
 	private void pressAnyKeyToContinue() {
 		System.out.println("Press any key to continue...");
+=======
+	
+	private void pressEnterKeyToContinue() {
+		System.out.println("Press the ENTER key to continue...");
+>>>>>>> branch 'master' of https://github.com/adamdewing/GroupProject1.git
 		try {
 			System.in.read();
 		} catch (Exception e) {
@@ -153,6 +166,12 @@ public class TheaterApplication {
 			}
 		} while (true);
 
+	}
+	
+	public static void clearPage() {
+		for(int i = 0; i < 30; i++) {
+			System.out.println(System.lineSeparator());
+		}
 	}
 
 }

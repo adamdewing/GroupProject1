@@ -7,14 +7,12 @@
 
 package com.metrostate.ics372.project.one;
 
-import javax.swing.text.html.HTMLDocument;
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-public class CustomerList implements DataAccess<Customer, String>{
+public class CustomerList implements DataAccess<Customer, String>, Modified{
 
+	private static boolean isModified = false;
 	private static CustomerList customerList;
 	public static List<Customer> customers = new ArrayList<Customer>();
 
@@ -24,6 +22,13 @@ public class CustomerList implements DataAccess<Customer, String>{
 		} else {
 			return customerList;
 		}
+	}
+
+	@Override
+	public Customer add(Customer item) {
+		customers.add(item);
+		isModified = true;
+		return null;
 	}
 
 	public Customer findCustomer(String id){
@@ -36,14 +41,13 @@ public class CustomerList implements DataAccess<Customer, String>{
 	}
 
 	@Override
-	public Customer add(Customer item) {
-		customers.add(item);
-		return null;
+	public List<Customer> getAll() {
+		return customers;
 	}
 
 	@Override
-	public List<Customer> getAll() {
-		return customers;
+	public boolean isModified() {
+		return isModified;
 	}
 
 	@Override
@@ -56,13 +60,18 @@ public class CustomerList implements DataAccess<Customer, String>{
 				customers.remove(i);
 			}
 		}
-
+		isModified = true;
 		return targetCustomer;
 	}
 
 	@Override
 	public void removeAll() {
-		// TODO Auto-generated method stub
-		
+		customers = new ArrayList<Customer>();
+		isModified = true;
+	}
+
+	@Override
+	public void resetModifiedFlag() {
+		isModified = false;
 	}
 }
