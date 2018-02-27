@@ -21,16 +21,11 @@ public class TheaterApplication {
 	private DataStorageView dataStorageView = new DataStorageView();
 
 	// Flags --------------------------------------------------------
-	private boolean useOldMenu = false;
 	public static boolean isDebugMode = false;
 
 	public static void main(String[] args) {
 		TheaterApplication app = new TheaterApplication();
-		if (app.useOldMenu) {
-			app.startApplicationOld();
-		} else {
-			app.startApplication();
-		}
+		app.startApplication();
 	}
 
 	private void startApplication() {
@@ -121,40 +116,6 @@ public class TheaterApplication {
 		System.exit(0);
 	}
 
-	@Deprecated
-	private void startApplicationOld() {
-		Scanner scanner = new Scanner(System.in);
-		String option;
-		do {
-			System.out.println("Theater Application");
-			System.out.println(LINE_SEPARATER);
-			System.out.println("Main Menu");
-			System.out.println("1:  " + CLIENT + " functions.");
-			System.out.println("2:  " + CUSTOMER + " functions.");
-			System.out.println("3:  " + DATA + " functions.");
-			System.out.println("4:  Exit Application.");
-			System.out.println(LINE_SEPARATER);
-			System.out.println("Please type an option and hit enter:");
-
-			option = scanner.next();
-
-			if (option.equals("1")) {
-				ClientView cv = new ClientView();
-				cv.displayClientMenu();
-			} else if (option.equals("2")) {
-				CustomerView customerView = new CustomerView();
-				customerView.displayCustomerMenu();
-			} else if (option.equals("3")) {
-			} else if (option.equals("4")) {
-				System.out.println("Exiting Application");
-				System.exit(0);
-			} else {
-
-			}
-		} while (true);
-
-	}
-	
 	public static void clearPage() {
 		for(int i = 0; i < 30; i++) {
 			System.out.println(System.lineSeparator());
