@@ -15,20 +15,20 @@ public class TheaterApplication {
 	public static final String LINE_SEPARATER = "--------------------------------------------------";
 	public static final String SHOW = "Show";
 	public static final String DATA = "Data";
-	
+
 	private CustomerView customerView = new CustomerView();
-	private ClientView clientVew = new ClientView();
+	private ClientView clientView = new ClientView();
 	private DataStorageView dataStorageView = new DataStorageView();
-	
-	//Flags --------------------------------------------------------
+
+	// Flags --------------------------------------------------------
 	private boolean useOldMenu = false;
 	public static boolean isDebugMode = false;
-	
+
 	public static void main(String[] args) {
 		TheaterApplication app = new TheaterApplication();
-		if(app.useOldMenu) {
+		if (app.useOldMenu) {
 			app.startApplicationOld();
-		}else {
+		} else {
 			app.startApplication();
 		}
 	}
@@ -36,9 +36,11 @@ public class TheaterApplication {
 	private void startApplication() {
 		Scanner scanner = new Scanner(System.in);
 		String option;
-		while(true) {
+		while (true) {
 			System.out.println("");
+			System.out.println(LINE_SEPARATER);
 			System.out.println("Theater Application");
+			System.out.println(LINE_SEPARATER);
 			System.out.println("0:  Exit Application.");
 			System.out.println("1:  Add " + CLIENT + ":");
 			System.out.println("2:  Remove  " + CLIENT + ":");
@@ -56,64 +58,69 @@ public class TheaterApplication {
 			System.out.println(LINE_SEPARATER);
 			System.out.println(LINE_SEPARATER);
 			System.out.println("Please type an option and hit enter:");
-			
+
 			option = scanner.next();
-			if(option.equals("0")) {
+			if (option.equals("0")) {
 				exit();
-			}else if(option.equals("1")) {
-				//Add Client
-			}else if(option.equals("2")) {
-				//Remove Client
-			}else if(option.equals("3")) {
-				//List all Clients
-			}else if(option.equals("4")) {
-				//Add customer
+			} else if (option.equals("1")) {
+				// Add Client
+				clientView.addClient();
+			} else if (option.equals("2")) {
+				// Remove Client
+				clientView.removeClients();
+			} else if (option.equals("3")) {
+				// List all Clients
+				clientView.listAllClients();
+			} else if (option.equals("4")) {
+				// Add customer
 				customerView.addCustomer();
-			}else if(option.equals("5")) {
-				//Remove Customer
+			} else if (option.equals("5")) {
+				// Remove Customer
 				customerView.removeCustomer();
-			}else if(option.equals("6")) {
-				//Add Credit Card
+			} else if (option.equals("6")) {
+				// Add Credit Card
 				customerView.addCreditCard();
-			}else if(option.equals("7")) {
-				//Remove Credit Card
+			} else if (option.equals("7")) {
+				// Remove Credit Card
 				customerView.removeCreditCard();
-			}else if(option.equals("8")) {
-				//List all Customers
+			} else if (option.equals("8")) {
+				// List all Customers
 				customerView.listAllCustomers();
-			}else if(option.equals("9")) {
-				//Add Show/Play
-			}else if(option.equals("10")) {
-				//List all Shows
-			}else if(option.equals("11")) {
-				//Store Data
+			} else if (option.equals("9")) {
+				// Add Show/Play
+				clientView.addShow();
+			} else if (option.equals("10")) {
+				// List all Shows
+				clientView.listAllShows();
+			} else if (option.equals("11")) {
+				// Store Data
 				dataStorageView.storeData();
-			}else if(option.equals("12")) {
-				//Load Data
+			} else if (option.equals("12")) {
+				// Load Data
 				dataStorageView.retrieveData();
-			}else if(option.equals("13")) {
-				//Help
-			}else {
+			} else if (option.equals("13")) {
+				// Help
+			} else {
 				System.out.println("The entry of " + option + " is an invalid option.");
 				pressAnyKeyToContinue();
 			}
 		}
-		
+
 	}
-	
+
 	private void pressAnyKeyToContinue() {
 		System.out.println("Press any key to continue...");
 		try {
 			System.in.read();
-		}catch(Exception e) {
-			//ignore any exceptions
+		} catch (Exception e) {
+			// ignore any exceptions
 		}
 	}
-	
+
 	private void exit() {
 		System.exit(0);
 	}
-	
+
 	@Deprecated
 	private void startApplicationOld() {
 		Scanner scanner = new Scanner(System.in);
@@ -130,7 +137,7 @@ public class TheaterApplication {
 			System.out.println("Please type an option and hit enter:");
 
 			option = scanner.next();
-			
+
 			if (option.equals("1")) {
 				ClientView cv = new ClientView();
 				cv.displayClientMenu();
