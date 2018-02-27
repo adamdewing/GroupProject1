@@ -20,6 +20,10 @@ public class DataStorageView {
 		}
 	}
 	
+	private void resetIsModifiedFlags() {
+		CustomerList.instance().resetModifiedFlag();
+	}
+	
 	public void retrieveData() {
 		Status status = dataStorageController.loadData();
 		TheaterApplication.clearPage();
@@ -44,11 +48,16 @@ public class DataStorageView {
 			System.out.println("Load was unsuccessful!  Data was loading from disk, but could not determine the type of data.");
 			pressEnterKeyToContinue();
 			break;
+		case UNSAVED_DATA_IN_SESSION:
+			System.out.println("Could not load data from session as there is unsaved data in the session.");
+			pressEnterKeyToContinue();
+			break;
 		default:
 			System.out.println("Load was unsuccessful.  Uknown status of " + status + " was detected." );
 			pressEnterKeyToContinue();
 		}
 		
+		resetIsModifiedFlags();
 	}
 	
 	public void retrieveOnStartup() {

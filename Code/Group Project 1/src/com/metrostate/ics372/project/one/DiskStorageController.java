@@ -14,6 +14,22 @@ public class DiskStorageController implements DataStorage {
 
 	private static final String FILE_NAME = "theater.data";
 
+	@Override
+	public boolean doesDataExist() {
+		try {
+			FileInputStream fis = new FileInputStream(FILE_NAME);
+			fis.close();
+		} catch (FileNotFoundException e) {
+			return false;
+		} catch (IOException e) {
+			if(TheaterApplication.isDebugMode) {
+				e.printStackTrace();
+			}
+			return false;
+		}
+		return true;
+	}
+	
 	/**
 	 * Empties the file used for data storage
 	 * @return status of the operations
@@ -38,12 +54,28 @@ public class DiskStorageController implements DataStorage {
 		}
 		return status;
 	}
-	
+
+	/**
+	 * Checks to see if any of the data has been modified.
+	 * @return true if the data has been modified in the session.
+	 */
+	private boolean isDataModified() {
+		if(CustomerList.instance().isModified()) {
+			return true;
+		}
+		//TODO check for CreditCards, Clients, and Shows
+		return false;
+	}
+
 	@Override
 	public Status loadData() {
 		Status status = null;
 		ObjectInputStream ois = null;
 		boolean isInputStreamClosed = false;
+		
+		if(isDataModified()) {
+			return Status.UNSAVED_DATA_IN_SESSION;
+		}
 
 		try {
 			FileInputStream fis = new FileInputStream(FILE_NAME);
@@ -160,6 +192,7 @@ public class DiskStorageController implements DataStorage {
 		return list;
 	}
 
+
 	@Override
 	public Status saveData() {
 		Status status;
@@ -213,22 +246,4 @@ public class DiskStorageController implements DataStorage {
 			oos.writeObject(item);
 		}
 	}
-
-
-	@Override
-	public boolean doesDataExist() {
-		try {
-			FileInputStream fis = new FileInputStream(FILE_NAME);
-			fis.close();
-		} catch (FileNotFoundException e) {
-			return false;
-		} catch (IOException e) {
-			if(TheaterApplication.isDebugMode) {
-				e.printStackTrace();
-			}
-			return false;
-		}
-		return true;
-	}
-
 }

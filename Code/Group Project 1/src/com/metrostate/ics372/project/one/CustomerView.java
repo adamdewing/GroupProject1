@@ -7,8 +7,6 @@
 
 package com.metrostate.ics372.project.one;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -61,6 +59,8 @@ public class CustomerView {
     public void addCustomer(){
         Scanner scanner = new Scanner(System.in);
 
+        TheaterApplication.clearPage();
+        
         System.out.println("Enter first name: ");
         String customerFirstName = scanner.nextLine();
 
@@ -105,10 +105,12 @@ public class CustomerView {
         } catch(Exception e) {
             System.out.println("Unable to add new customer. \nError: " + e);
         }
+        pressEnterKeyToContinue();
     }
 
     public void removeCustomer(){
         Scanner scanner = new Scanner(System.in);
+        TheaterApplication.clearPage();
         System.out.println("Enter a Customer ID: ");
         String customerId = scanner.nextLine();
         Customer removedCustomer = customerList.remove(customerId);
@@ -122,10 +124,12 @@ public class CustomerView {
                     "Customer not found. Remove failed. \n" +
                     TheaterApplication.LINE_SEPARATER + "\n");
         }
+        pressEnterKeyToContinue();
     }
 
     public void addCreditCard(){
         Scanner scanner = new Scanner(System.in);
+        TheaterApplication.clearPage();
 
         System.out.println("Enter a Customer ID: ");
         String customerId = scanner.nextLine();
@@ -147,10 +151,13 @@ public class CustomerView {
 
         System.out.println("Cards on File: \n");
         creditCardList.printAll();
+        
+        pressEnterKeyToContinue();
     }
 
     public void removeCreditCard(){
         Scanner scanner = new Scanner(System.in);
+        TheaterApplication.clearPage();
 
         System.out.println("Enter a credit card number: ");
         String creditCardNumber = scanner.nextLine();
@@ -165,9 +172,12 @@ public class CustomerView {
 
         System.out.println("Cards on File: \n");
         creditCardList.printAll();
+        
+        pressEnterKeyToContinue();
     }
 
     public void listAllCustomers(){
+    	TheaterApplication.clearPage();
         System.out.println(TheaterApplication.LINE_SEPARATER + "\n" +
                 "Customer List\n" + TheaterApplication.LINE_SEPARATER);
 
@@ -175,5 +185,15 @@ public class CustomerView {
         tempCustomerList.forEach(item -> System.out.print(item.toString()));
 
         System.out.println(TheaterApplication.LINE_SEPARATER);
+        pressEnterKeyToContinue();
     }
+    
+	private void pressEnterKeyToContinue() {
+		System.out.println("Press the ENTER key to continue...");
+		try {
+			System.in.read();
+		}catch(Exception e) {
+			//ignore any exceptions
+		}
+	}
 }
