@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ClientList implements DataAccess<Client, String>, Serializable {
+public class ClientList implements DataAccess<Client, String>, Modified {
 
+	private static boolean isModified = false;
 	private static List<Client> clients = new ArrayList<Client>();
 	private static ClientList clientList;
 	public static final int CLIENT_NOT_FOUND = 1;
@@ -57,6 +58,7 @@ public class ClientList implements DataAccess<Client, String>, Serializable {
 		if (id == null) {
 			return false;
 		} else {
+			isModified = true;
 			return clients.remove(client);
 		}
 	}
@@ -80,6 +82,7 @@ public class ClientList implements DataAccess<Client, String>, Serializable {
 			return (CLIENT_SHOW_SCHEDULED);
 		}
 		if (clientList.deleteClient(id)) {
+			isModified = true;
 			return (CLIENT_REMOVED);
 		}
 		return OPERATION_FAILED;
@@ -88,6 +91,7 @@ public class ClientList implements DataAccess<Client, String>, Serializable {
 	@Override
 	public Client add(Client item) {
 		clients.add(item);
+		isModified = true;
 		return item;
 	}
 
@@ -98,13 +102,24 @@ public class ClientList implements DataAccess<Client, String>, Serializable {
 
 	@Override
 	public Client remove(String id) {
-		return search(id);
+		deleteClient(id);
+		return null;
 	}
 
 	@Override
 	public void removeAll() {
 		clients = new ArrayList<Client>();
-		
+		isModified = true;
+	}
+
+	@Override
+	public boolean isModified() {
+		return isModified;
+	}
+
+	@Override
+	public void resetModifiedFlag() {
+		isModified = false;
 	}
 
 }

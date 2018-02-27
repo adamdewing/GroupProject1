@@ -20,10 +20,6 @@ public class DataStorageView {
 		}
 	}
 	
-	private void resetIsModifiedFlags() {
-		CustomerList.instance().resetModifiedFlag();
-	}
-	
 	public void retrieveData() {
 		Status status = dataStorageController.loadData();
 		TheaterApplication.clearPage();
@@ -57,7 +53,6 @@ public class DataStorageView {
 			pressEnterKeyToContinue();
 		}
 		
-		resetIsModifiedFlags();
 	}
 	
 	public void retrieveOnStartup() {

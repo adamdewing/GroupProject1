@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class ShowList implements DataAccess<Show, String>, Serializable {
+public class ShowList implements DataAccess<Show, String>, Modified {
 
+	private static boolean isModified = false;
 	private static List<Show> shows = new ArrayList<Show>();
 	private static ShowList showList;
 
@@ -33,6 +34,7 @@ public class ShowList implements DataAccess<Show, String>, Serializable {
 	@Override
 	public Show add(Show item) {
 		shows.add(item);
+		isModified = true;
 		return item;
 	}
 
@@ -46,6 +48,7 @@ public class ShowList implements DataAccess<Show, String>, Serializable {
 		for (Iterator iterator = shows.iterator(); iterator.hasNext();) {
 			Show show = (Show) iterator.next();
 			if (show.getShowName().equals(showName)) {
+				isModified = true;
 				return show;
 			}
 		}
@@ -55,5 +58,16 @@ public class ShowList implements DataAccess<Show, String>, Serializable {
 	@Override
 	public void removeAll() {
 		shows = new ArrayList<Show>();
+		isModified = true;
+	}
+
+	@Override
+	public boolean isModified() {
+		return isModified;
+	}
+
+	@Override
+	public void resetModifiedFlag() {
+		isModified = false;
 	}
 }

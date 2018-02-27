@@ -7,14 +7,13 @@
 
 package com.metrostate.ics372.project.one;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-public class CreditCardList implements DataAccess<CreditCard, String>{
+public class CreditCardList implements DataAccess<CreditCard, String>, Modified{
     private static CreditCardList creditCardList;
-    public static List<CreditCard> creditCards = new ArrayList<CreditCard>();
+    private static boolean isModified = false;
+    private static List<CreditCard> creditCards = new ArrayList<CreditCard>();
 
     /**
      * Method which creates an instance of the CreditCardList Object.
@@ -69,6 +68,7 @@ public class CreditCardList implements DataAccess<CreditCard, String>{
         if(targetCardIndex >=0 && ownerCardCount > 1){
             CreditCard tempCard = creditCards.get(targetCardIndex);
             creditCards.remove(targetCardIndex);
+            isModified = true;
             return tempCard;
         }
 
@@ -96,6 +96,7 @@ public class CreditCardList implements DataAccess<CreditCard, String>{
 
         if(ownerExists && !cardExists){
             creditCards.add(newCard);
+            isModified = true;
             return newCard;
         }else{
             return null;
@@ -109,7 +110,8 @@ public class CreditCardList implements DataAccess<CreditCard, String>{
 
     @Override
     public void removeAll() {
-
+    	creditCards = new ArrayList<CreditCard>();
+    	isModified = true;
     }
 
     public void printAll() {
@@ -117,4 +119,14 @@ public class CreditCardList implements DataAccess<CreditCard, String>{
             System.out.println(creditCards.get(i).toString());
         }
     }
+
+	@Override
+	public boolean isModified() {
+		return isModified;
+	}
+
+	@Override
+	public void resetModifiedFlag() {
+		isModified = false;
+	}
 }
