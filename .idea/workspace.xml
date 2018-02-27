@@ -17,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CustomerView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CustomerView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="230" column="29" lean-forward="true" selection-start-line="230" selection-start-column="29" selection-end-line="230" selection-end-column="29" />
+            <state relative-caret-position="493">
+              <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -32,9 +32,10 @@
       <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+            <state relative-caret-position="782">
+              <caret line="46" column="47" lean-forward="true" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
               <folding>
+                <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#1632#1633#0" expanded="true" />
                 <element signature="e#1656#1657#0" expanded="true" />
@@ -57,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCard.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+              <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#1302#1303#0" expanded="true" />
@@ -86,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TheaterApplication.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TheaterApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/TheaterApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="38" column="49" lean-forward="false" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+            <state relative-caret-position="251">
+              <caret line="67" column="39" lean-forward="true" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -123,11 +124,11 @@
         <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/Client.java" />
         <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/ClientView.java" />
         <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/TheaterApplication.java" />
-        <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/Customer.java" />
         <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCard.java" />
         <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerList.java" />
         <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCardList.java" />
         <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerView.java" />
+        <option value="$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/Customer.java" />
       </list>
     </option>
   </component>
@@ -157,6 +158,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -180,8 +183,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -190,6 +191,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -327,30 +329,32 @@
       <workItem from="1519261048657" duration="234000" />
       <workItem from="1519310497537" duration="2375000" />
       <workItem from="1519396372900" duration="659000" />
-      <workItem from="1519429358668" duration="63694000" />
+      <workItem from="1519429358668" duration="64110000" />
+      <workItem from="1519742153376" duration="3009000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70647000" />
+    <option name="totallyTimeSpent" value="74072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32805908" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38607594" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38607594" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9483122" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -362,6 +366,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32805908" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -418,14 +423,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/DiskView.java">
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        <state relative-caret-position="0">
+          <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="73" lean-forward="false" selection-start-line="1" selection-start-column="73" selection-end-line="1" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCardList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="63" lean-forward="false" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="63" />
+          <folding>
+            <element signature="e#3764#3765#0" expanded="true" />
+            <element signature="e#3798#3799#0" expanded="true" />
+            <element signature="e#4317#4318#0" expanded="true" />
+            <element signature="e#4341#4342#0" expanded="true" />
+            <element signature="e#4388#4389#0" expanded="true" />
+            <element signature="e#4413#4414#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/TheaterApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="49" lean-forward="false" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/DiskView.java" />
     <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/ClientView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -444,14 +496,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/DiskView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/DiskView.java" />
     <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/ClientView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -460,13 +505,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/DiskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/DiskController.java" />
     <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -477,13 +516,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/DataController.java" />
     <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/DataView.java" />
-    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/DiskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/DiskController.java" />
     <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/classDiagrams.ucls">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2349">
@@ -492,14 +525,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/DiskView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="43" column="20" lean-forward="true" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/DiskView.java" />
     <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -528,7 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -544,9 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -569,14 +591,14 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-16.0" y="199.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-16.0" y="200.0" />
           <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
             <Category>Inner Classes</Category>
+            <Category>Constructors</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
@@ -606,7 +628,7 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="224.5" y="202.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="225.0" y="203.0" />
           <SelectedNodes />
           <Categories />
           <SCOPE>All</SCOPE>
@@ -642,25 +664,17 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="0.6000000000000001" x="996.833333333333" y="370.33333333333326" />
+          <settings layout="Hierarchic Group" zoom="0.6000000000000001" x="997.0" y="370.0" />
           <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
             <Category>Inner Classes</Category>
+            <Category>Constructors</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/TheaterApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="38" column="49" lean-forward="false" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,6 +683,51 @@
         <state relative-caret-position="136">
           <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="47" lean-forward="true" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="73" lean-forward="false" selection-start-line="1" selection-start-column="73" selection-end-line="1" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#1302#1303#0" expanded="true" />
+            <element signature="e#1341#1342#0" expanded="true" />
+            <element signature="e#1379#1380#0" expanded="true" />
+            <element signature="e#1413#1414#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -687,47 +746,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CreditCard.java">
+    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/TheaterApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#1302#1303#0" expanded="true" />
-            <element signature="e#1341#1342#0" expanded="true" />
-            <element signature="e#1379#1380#0" expanded="true" />
-            <element signature="e#1413#1414#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="73" lean-forward="false" selection-start-line="1" selection-start-column="73" selection-end-line="1" selection-end-column="73" />
+        <state relative-caret-position="251">
+          <caret line="67" column="39" lean-forward="true" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1632#1633#0" expanded="true" />
-            <element signature="e#1656#1657#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Code/Group Project 1/src/com/metrostate/ics372/project/one/CustomerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="230" column="29" lean-forward="true" selection-start-line="230" selection-start-column="29" selection-end-line="230" selection-end-column="29" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
