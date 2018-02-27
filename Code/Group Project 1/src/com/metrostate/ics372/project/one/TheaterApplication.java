@@ -18,11 +18,13 @@ public class TheaterApplication {
 
 	// Flags --------------------------------------------------------
 	public static boolean isDebugMode = false;
+
 	public static void clearPage() {
-		for(int i = 0; i < 30; i++) {
+		for (int i = 0; i < 30; i++) {
 			System.out.println(System.lineSeparator());
 		}
 	}
+
 	public static void main(String[] args) {
 		TheaterApplication app = new TheaterApplication();
 		app.startApplication();
@@ -33,8 +35,51 @@ public class TheaterApplication {
 	private ClientView clientView = new ClientView();
 
 	private DataStorageView dataStorageView = new DataStorageView();
+
 	private void exit() {
 		System.exit(0);
+	}
+
+	/**
+	 * Displays a help menu to the user.
+	 */
+	private void help() {
+		clearPage();
+		System.out.println("Exit the Application: Store the data on disk and quit the application");
+		System.out.println(
+				"Add Client: The system accepts the name, address, and phone number of the client. The system\r\n"
+						+ "generates a unique id and sets the balance to 0.");
+		System.out.println(
+				"Remove Client. Remove a client with the given id. If a show is scheduled for the current or a\r\n"
+						+ "future date for this client, the client cannot be removed.");
+		System.out.println("List all Clients: Print information about every client.");
+		System.out.println("Add Customer: The system accepts the name, address, phone number, and the number and\r\n"
+				+ "expiry date of exactly one credit card. The system generates a unique id for the customer.");
+		System.out.println("Remove Customer: Remove a customer with the given id. All credit cards related to the\r\n"
+				+ "customer are also deleted.");
+		System.out.println(
+				"Add a Credit Card: The system accepts the customer id, credit card number, and expiry date and\r\n"
+						+ "remembers that the credit card belongs to this customer");
+		System.out.println(
+				"Remove a Credit Card: The system accepts the credit card number and removes the information\r\n"
+						+ "related to the credit card. If this is the only credit card for the customer, it refuses to delete the\r\n"
+						+ "credit card information.");
+		System.out.println(
+				"List all Customers: Print information about every client, including credit card information.");
+		System.out.println(
+				"Add a Show/Play: Add a new show for a client. The values accepted are the name of the show,\r\n"
+						+ "the client id, and the period for which the client wants the theater for this play. The entire range\r\n"
+						+ "of dates should be available, or the process fails.");
+		System.out.println("List all Shows: List the names and dates of all shows");
+		System.out.println(
+				"Store Data: Store all data related to the theater (everything, including customers, shows,\r\n"
+						+ "clients, etc.) on disk");
+		System.out.println(
+				"Retrieve Data: Retrieve all information related to the theater. This may be done at the start of\r\n"
+						+ "any session. If stored data is found, the user has the option to use it. The user may also invoke\r\n"
+						+ "a command to load data, provided he/she has not yet issued any data-related commands in\r\n"
+						+ "that session.");
+
 	}
 
 	private void pressEnterKeyToContinue() {
@@ -48,10 +93,10 @@ public class TheaterApplication {
 
 	private void startApplication() {
 		dataStorageView.retrieveOnStartup();
-		
+
 		Scanner scanner = new Scanner(System.in);
 		String option;
-		while(true) {
+		while (true) {
 			clearPage();
 			System.out.println("Theater Application");
 			System.out.println(LINE_SEPARATER);
@@ -114,6 +159,7 @@ public class TheaterApplication {
 				dataStorageView.retrieveData();
 			} else if (option.equals("13")) {
 				// Help
+				help();
 			} else {
 				System.out.println("The entry of " + option + " is an invalid option.");
 				pressEnterKeyToContinue();
