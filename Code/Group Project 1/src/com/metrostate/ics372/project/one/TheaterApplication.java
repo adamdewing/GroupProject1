@@ -34,10 +34,12 @@ public class TheaterApplication {
 	}
 
 	private void startApplication() {
+		dataStorageView.retrieveOnStartup();
+		
 		Scanner scanner = new Scanner(System.in);
 		String option;
 		while(true) {
-			System.out.println("");
+			clearPage();
 			System.out.println("Theater Application");
 			System.out.println("0:  Exit Application.");
 			System.out.println("1:  Add " + CLIENT + ":");
@@ -95,14 +97,14 @@ public class TheaterApplication {
 				//Help
 			}else {
 				System.out.println("The entry of " + option + " is an invalid option.");
-				pressAnyKeyToContinue();
+				pressEnterKeyToContinue();
 			}
 		}
 		
 	}
 	
-	private void pressAnyKeyToContinue() {
-		System.out.println("Press any key to continue...");
+	private void pressEnterKeyToContinue() {
+		System.out.println("Press the ENTER key to continue...");
 		try {
 			System.in.read();
 		}catch(Exception e) {
@@ -146,6 +148,12 @@ public class TheaterApplication {
 			}
 		} while (true);
 
+	}
+	
+	public static void clearPage() {
+		for(int i = 0; i < 10; i++) {
+			System.out.println(System.lineSeparator());
+		}
 	}
 
 }

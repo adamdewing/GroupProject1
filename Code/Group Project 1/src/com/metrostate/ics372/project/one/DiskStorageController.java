@@ -7,8 +7,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.nio.channels.FileChannel;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -214,6 +212,23 @@ public class DiskStorageController implements DataStorage {
 		for (E item : list) {
 			oos.writeObject(item);
 		}
+	}
+
+
+	@Override
+	public boolean doesDataExist() {
+		try {
+			FileInputStream fis = new FileInputStream(FILE_NAME);
+			fis.close();
+		} catch (FileNotFoundException e) {
+			return false;
+		} catch (IOException e) {
+			if(TheaterApplication.isDebugMode) {
+				e.printStackTrace();
+			}
+			return false;
+		}
+		return true;
 	}
 
 }
