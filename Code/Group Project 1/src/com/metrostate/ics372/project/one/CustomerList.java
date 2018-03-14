@@ -73,4 +73,14 @@ public class CustomerList implements DataAccess<Customer, String>, Modified{
 	public void resetModifiedFlag() {
 		isModified = false;
 	}
+
+	@Override
+	public Customer find(String id) {
+		for(int i = 0; i < customers.size(); i++){
+			if(customers.get(i).getCustomerId().equals(id)){
+				return customers.get(i);
+			}
+		}
+		return null;
+	}
 }

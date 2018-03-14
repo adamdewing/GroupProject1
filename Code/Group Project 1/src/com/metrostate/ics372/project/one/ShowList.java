@@ -69,4 +69,10 @@ public class ShowList implements DataAccess<Show, String>, Modified {
 	public void resetModifiedFlag() {
 		isModified = false;
 	}
+
+	@Override
+	public Show find(String id) {
+//TODO
+		return null;
+	}
 }

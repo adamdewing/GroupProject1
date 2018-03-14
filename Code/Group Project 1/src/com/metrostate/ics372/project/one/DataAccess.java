@@ -19,6 +19,13 @@ public interface DataAccess<E, K> {
 	public E add(E item);
 
 	/**
+	 * Finds the item in the collection using the id of the item.
+	 * @param id
+	 * @return item or null if there were no matches.
+	 */
+	public E find(K id);
+	
+	/**
 	 * Returns a List of all objects of type E.
 	 * @return
 	 */

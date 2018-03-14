@@ -121,4 +121,14 @@ public class ClientList implements DataAccess<Client, String>, Modified {
 		isModified = false;
 	}
 
+	@Override
+	public Client find(String id) {
+		for(int i = 0; i < clients.size(); i++){
+			if(clients.get(i).getClientId().equals(id)){
+				return clients.get(i);
+			}
+		}
+		return null;
+	}
+
 }
