@@ -106,7 +106,7 @@ public class CustomerView {
             creditCard = new CreditCard(customer.getCustomerId(), customerCreditCard,
                     customerCreditCardExpirationDate);
 
-            if(customerList.findCustomer(customer.getCustomerId()) != null) {
+            if(customerList.find(customer.getCustomerId()) != null) {
             	System.out.println("Cannot add customer as customer already exists!");
             	pressEnterKeyToContinue();
             	return;

@@ -30,15 +30,6 @@ public class CustomerList implements DataAccess<Customer, String>, Modified{
 		return item;
 	}
 
-	public Customer findCustomer(String id){
-		for(int i = 0; i < customers.size(); i++){
-			if(customers.get(i).getCustomerId().equals(id)){
-				return customers.get(i);
-			}
-		}
-		return null;
-	}
-
 	@Override
 	public List<Customer> getAll() {
 		return customers;

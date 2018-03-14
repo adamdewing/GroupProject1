@@ -86,7 +86,7 @@ public class CreditCardList implements DataAccess<CreditCard, String>, Modified{
         boolean ownerExists = false;
         boolean cardExists = false;
 
-        if(CustomerList.instance().findCustomer(newCard.getCardOwnerId()) != null) {
+        if(CustomerList.instance().find(newCard.getCardOwnerId()) != null) {
         	ownerExists = true;
         }
         
