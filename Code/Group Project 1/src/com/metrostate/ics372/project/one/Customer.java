@@ -6,8 +6,6 @@
 package com.metrostate.ics372.project.one;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -57,8 +55,6 @@ public class Customer implements Serializable{
 	 * @return String value representing a unique id.
 	 */
 	private String generateCustomerId(){
-		Random random = new Random();
-		int randomNumber = 1000 + random.nextInt(10000 - 1000);
 		return this.firstName.substring(0,1) +
 				this.lastName.substring(0, 1) +
 				this.phoneNumber.substring(this.phoneNumber.length() - 4,

@@ -1,7 +1,6 @@
 package com.metrostate.ics372.project.one;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 

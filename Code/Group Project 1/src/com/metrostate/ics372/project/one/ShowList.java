@@ -44,7 +44,7 @@ public class ShowList implements DataAccess<Show, String>, Modified {
 
 	@Override
 	public Show remove(String showName) {
-		for (Iterator iterator = shows.iterator(); iterator.hasNext();) {
+		for (Iterator<Show> iterator = shows.iterator(); iterator.hasNext();) {
 			Show show = (Show) iterator.next();
 			if (show.getShowName().equals(showName)) {
 				iterator.remove();
@@ -73,7 +73,7 @@ public class ShowList implements DataAccess<Show, String>, Modified {
 
 	@Override
 	public Show find(String id) {
-		for (Iterator iterator = shows.iterator(); iterator.hasNext();) {
+		for (Iterator<Show> iterator = shows.iterator(); iterator.hasNext();) {
 			Show show = (Show) iterator.next();
 			if (show.getId().equals(id)) {
 				return show;

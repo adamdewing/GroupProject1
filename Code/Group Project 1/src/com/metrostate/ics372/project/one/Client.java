@@ -1,8 +1,6 @@
 package com.metrostate.ics372.project.one;
 
-import java.util.List;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Random;
 
 /**
