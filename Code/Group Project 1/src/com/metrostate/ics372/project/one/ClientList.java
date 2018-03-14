@@ -35,25 +35,8 @@ public class ClientList implements DataAccess<Client, String>, Modified {
 		}
 	}
 
-	/**
-	 * Checks whether a client with a given client id exists.
-	 * 
-	 * @param clientId
-	 *            the id of the client
-	 * @return 
-	 * 
-	 */
-	public Client search(String clientId) {
-		for(int i = 0; i < clients.size(); i++){
-			if(clients.get(i).getClientId().equals(clientId)){
-				return clients.get(i);
-			}
-		}
-		return null;
-	}
-
 	public boolean deleteClient(String id) {
-		Client client = search(id);
+		Client client = find(id);
 		if (id == null) {
 			return false;
 		} else {
@@ -72,7 +55,7 @@ public class ClientList implements DataAccess<Client, String>, Modified {
 	}
 
 	public int removeClient(String id) {
-		Client client = clientList.search(id);
+		Client client = clientList.find(id);
 		
 		if (client == null) {
 			return (CLIENT_NOT_FOUND);

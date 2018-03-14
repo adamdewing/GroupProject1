@@ -53,7 +53,7 @@ public class ClientView {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Client ID: ");
 		String id = scanner.nextLine();
-		Client client = clientList.search(id);
+		Client client = clientList.find(id);
 		if (client == null) {
 			System.out.println("Client does not exist.");
 			return;
