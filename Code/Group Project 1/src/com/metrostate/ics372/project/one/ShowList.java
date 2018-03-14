@@ -47,6 +47,7 @@ public class ShowList implements DataAccess<Show, String>, Modified {
 		for (Iterator iterator = shows.iterator(); iterator.hasNext();) {
 			Show show = (Show) iterator.next();
 			if (show.getShowName().equals(showName)) {
+				iterator.remove();
 				isModified = true;
 				return show;
 			}
@@ -72,7 +73,12 @@ public class ShowList implements DataAccess<Show, String>, Modified {
 
 	@Override
 	public Show find(String id) {
-//TODO
+		for (Iterator iterator = shows.iterator(); iterator.hasNext();) {
+			Show show = (Show) iterator.next();
+			if (show.getId().equals(id)) {
+				return show;
+			}
+		}
 		return null;
 	}
 }

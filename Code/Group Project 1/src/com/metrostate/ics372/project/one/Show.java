@@ -3,25 +3,48 @@ package com.metrostate.ics372.project.one;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 public class Show implements Serializable{
+	private static final long serialVersionUID = 1L;
+
+	private String id;
 	private String showName;
 	private Date startDate;
 	private Date endDate;
 	private String clientId;
-	private static final long serialVersionUID = 1L;
-	
-	public Show() {};
-	
-	public Show(String name, String id, Date start, Date end) {
+
+	public Show(String name, String clientId, Date start, Date end) {
 		this.showName = name;
 		this.clientId = id;
 		this.startDate = start;
 		this.endDate = end;
+		Random rndObj = new Random();
+		int random = 10000 + rndObj.nextInt(100000 - 10000);
+		id = name + random;
 	}
 	
 	public String getClientId() {
 		return clientId;
+	};
+	
+	public Date getEndDate() {
+		return endDate;
+	}
+	
+	public String getId() {
+		return id;
+	}
+
+
+	public String getShowName() {
+		return showName;
+	}
+
+
+
+	public Date getStartDate() {
+		return startDate;
 	}
 
 
@@ -30,9 +53,13 @@ public class Show implements Serializable{
 	}
 
 
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
 
-	public String getShowName() {
-		return showName;
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 
@@ -41,30 +68,13 @@ public class Show implements Serializable{
 	}
 
 
-	public Date getStartDate() {
-		return startDate;
-	}
-
-
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
-
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
 	
+	@Override
 	public String toString() {
-		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-		String showInfo = '\n' + "Name: " + showName + '\n' + "Client ID: " + clientId + '\n' 
-				+ "Show Dates: " + sdf.format(startDate) + " - " + sdf.format(endDate) 
-					+ '\n';
-		return showInfo;
+		return "Show [id=" + id + ", showName=" + showName + ", startDate=" + startDate + ", endDate=" + endDate
+				+ ", clientId=" + clientId + "]";
 	}
 }
