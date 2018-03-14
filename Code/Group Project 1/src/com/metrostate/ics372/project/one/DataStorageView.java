@@ -7,18 +7,8 @@ import java.util.Scanner;
  * @author adamv
  *
  */
-public class DataStorageView {
+public class DataStorageView extends BaseView{
 	private DataStorage dataStorageController = new DiskStorageController();
-	
-	
-	private void pressEnterKeyToContinue() {
-		System.out.println("Press ENTER key to continue...");
-		try {
-			System.in.read();
-		}catch(Exception e) {
-			//ignore any exceptions
-		}
-	}
 	
 	public void retrieveData() {
 		Status status = dataStorageController.loadData();

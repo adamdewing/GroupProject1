@@ -12,8 +12,10 @@ public class Show implements Serializable{
 	private Date startDate;
 	private Date endDate;
 	private String clientId;
+	private double ticketPrice;
 
 	public Show(String name, String clientId, Date start, Date end) {
+		//TODO add in ticket price here
 		this.showName = name;
 		this.clientId = id;
 		this.startDate = start;
