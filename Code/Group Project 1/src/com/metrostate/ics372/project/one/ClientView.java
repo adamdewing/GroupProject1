@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author xiong
  *
  */
-public class ClientView {
+public class ClientView extends BaseView{
 	public static final int CLIENT_NOT_FOUND = 1;
 	public static final int CLIENT_REMOVED = 2;
 	public static final int CLIENT_SHOW_SCHEDULED = 3;
@@ -146,15 +146,6 @@ public class ClientView {
 
 	}
 	
-	private void pressEnterKeyToContinue() {
-		System.out.println("Press ENTER key to continue...");
-		try {
-			System.in.read();
-		}catch(Exception e) {
-			//ignore any exceptions
-		}
-	}
-
 	public void removeClients() {
 		int result;
 		TheaterApplication.clearPage();

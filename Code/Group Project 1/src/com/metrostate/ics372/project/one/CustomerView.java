@@ -8,7 +8,7 @@ package com.metrostate.ics372.project.one;
 import java.util.List;
 import java.util.Scanner;
 
-public class CustomerView {
+public class CustomerView extends BaseView{
 
     private Customer customer;
     private CreditCard creditCard;
@@ -225,12 +225,4 @@ public class CustomerView {
         pressEnterKeyToContinue();
     }
 
-	private void pressEnterKeyToContinue() {
-		System.out.println("Press the ENTER key to continue...");
-		try {
-			System.in.read();
-		}catch(Exception e) {
-			//ignore any exceptions
-		}
-	}
 }

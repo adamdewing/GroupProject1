@@ -7,7 +7,7 @@ import java.util.Scanner;
  * charge of the startup of the application and the main (top) menu.
  *
  */
-public class TheaterApplication {
+public class TheaterApplication extends BaseView{
 
 	public static final String CLIENT = "Client";
 	public static final String CREDIT_CARD = "Credit Card";
@@ -94,15 +94,6 @@ public class TheaterApplication {
 		System.out.println(LINE_SEPARATER);
 		pressEnterKeyToContinue();
 
-	}
-
-	private void pressEnterKeyToContinue() {
-		System.out.println("Press the ENTER key to continue...");
-		try {
-			System.in.read();
-		} catch (Exception e) {
-			// ignore any exceptions
-		}
 	}
 
 	private void startApplication() {
