@@ -3,8 +3,17 @@ package com.metrostate.ics372.project.one;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * 	Holds ticket information.
+ *
+ */
 public class Ticket implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private String id;
 	private String showId;
 	private Date showDate;
