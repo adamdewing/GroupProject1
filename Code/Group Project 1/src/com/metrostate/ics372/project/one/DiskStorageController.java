@@ -61,7 +61,8 @@ public class DiskStorageController implements DataStorage {
 	 */
 	private boolean isDataModified() {
 		if(CustomerList.instance().isModified() || CreditCardList.instance().isModified()
-				|| ClientList.instance().isModified() || ShowList.instance().isModified()) {
+				|| ClientList.instance().isModified() || ShowList.instance().isModified()
+				|| TicketList.instance().isModified()) {
 			return true;
 		}
 		return false;
@@ -119,6 +120,7 @@ public class DiskStorageController implements DataStorage {
 		List<CreditCard> creditCards = new ArrayList<CreditCard>();
 		List<Client> clients = new ArrayList<Client>();
 		List<Show> shows = new ArrayList<Show>();
+		List<Ticket> tickets = new ArrayList<Ticket>();
 
 		// Put items in lists first. That way if there is an error, we don't partially
 		// load data into memeory
@@ -131,6 +133,8 @@ public class DiskStorageController implements DataStorage {
 				clients.add((Client) obj);
 			} else if (obj.getClass() == Show.class) {
 				shows.add((Show) obj);
+			} else if (obj.getClass() == Ticket.class) {
+				tickets.add((Ticket) obj);
 			} else {
 				return Status.UNKNOWN_OBJECT_TYPE_FROM_DISK;
 			}
@@ -141,6 +145,7 @@ public class DiskStorageController implements DataStorage {
 		ClientList.instance().removeAll();
 		CreditCardList.instance().removeAll();
 		ShowList.instance().removeAll();
+		TicketList.instance().removeAll();
 		
 		//Load data into memory now that we have it loaded from disk
 		//Add Customer objects
@@ -161,6 +166,11 @@ public class DiskStorageController implements DataStorage {
 		//Add Show objects
 		for(Show show : shows) {
 			ShowList.instance().add(show);
+		}
+		
+		//Add Show objects
+		for(Ticket ticket : tickets) {
+			TicketList.instance().add(ticket);
 		}
 		
 		return Status.OK;
@@ -198,6 +208,7 @@ public class DiskStorageController implements DataStorage {
 		CreditCardList.instance().resetModifiedFlag();
 		ClientList.instance().resetModifiedFlag();
 		ShowList.instance().resetModifiedFlag();
+		TicketList.instance().resetModifiedFlag();
 	}
 
 	@Override
@@ -213,6 +224,7 @@ public class DiskStorageController implements DataStorage {
 			List<CreditCard> creditCards = CreditCardList.instance().getAll();
 			List<Client> clients = ClientList.instance().getAll();
 			List<Show> shows = ShowList.instance().getAll();
+			List<Ticket> tickets = TicketList.instance().getAll();
 
 			// Write objects to disk
 			FileOutputStream fos = new FileOutputStream(FILE_NAME);
@@ -221,6 +233,7 @@ public class DiskStorageController implements DataStorage {
 			writeToDisk(creditCards, oos);
 			writeToDisk(clients, oos);
 			writeToDisk(shows, oos);
+			writeToDisk(tickets, oos);
 			oos.close();
 			isOutputStreamClosed = true;
 			status = Status.OK;
