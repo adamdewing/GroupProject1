@@ -7,7 +7,7 @@ import java.util.Scanner;
  * charge of the startup of the application and the main (top) menu.
  *
  */
-public class TheaterApplication extends BaseView{
+public class TheaterApplication extends BaseView {
 
 	public static final String CLIENT = "Client";
 	public static final String CREDIT_CARD = "Credit Card";
@@ -77,7 +77,7 @@ public class TheaterApplication extends BaseView{
 		System.out.println(LINE_SEPARATER);
 		System.out.println(
 				"Add a Show/Play: Add a new show for a client. The values accepted are the name of the show,\r\n"
-						+ "the client id, and the period for which the client wants the theater for this play. The entire range\r\n"
+						+ "the client id, the period for which the client wants the theater for this play, and the regular ticket price. The entire range\r\n"
 						+ "of dates should be available, or the process fails.");
 		System.out.println(LINE_SEPARATER);
 		System.out.println("List all Shows: List the names and dates of all shows");
@@ -91,6 +91,20 @@ public class TheaterApplication extends BaseView{
 						+ "any session. If stored data is found, the user has the option to use it. The user may also invoke\r\n"
 						+ "a command to load data, provided he/she has not yet issued any data-related commands in\r\n"
 						+ "that session.");
+		System.out.println(LINE_SEPARATER);
+		System.out.println(
+				"Sell regular tickets: Accept the quantity, customer id, credit card number, and the date of the show. ");
+		System.out.println(LINE_SEPARATER);
+		System.out.println(
+				"Sell advance tickets: Accept the quantity, customer id, credit card number, and the date of the show.");
+		System.out.println(LINE_SEPARATER);
+		System.out.println(
+				"Sell student advance tickets: Accept the quantity, customer id, credit card number, and the date of the show. ");
+		System.out.println(LINE_SEPARATER);
+		System.out.println(
+				"Pay client: Accept the client id and display the balance. Ask for the amount to be paid to the client (which must be verified to be no more than the balance) and update the client balance.");
+		System.out.println(LINE_SEPARATER);
+		System.out.println("Print all tickets for a certain day: All fields of all tickets will be displayed.");
 		System.out.println(LINE_SEPARATER);
 		pressEnterKeyToContinue();
 
@@ -118,7 +132,12 @@ public class TheaterApplication extends BaseView{
 			System.out.println("10:  List all " + SHOW + "s:");
 			System.out.println("11:  Store " + DATA + ":");
 			System.out.println("12:  Retrieve " + DATA + ":");
-			System.out.println("13:  Help:");
+			System.out.println("13:  Sell regular tickets:");
+			System.out.println("14:  Sell advance tickets:");
+			System.out.println("15:  Sell student advance tickets:");
+			System.out.println("16:  Pay client:");
+			System.out.println("17:  Print all tickets for a certain day:");
+			System.out.println("18:  Help:");
 			System.out.println(LINE_SEPARATER);
 			System.out.println(LINE_SEPARATER);
 			System.out.println("Please type an option and hit enter:");
@@ -163,6 +182,16 @@ public class TheaterApplication extends BaseView{
 				// Load Data
 				dataStorageView.retrieveData();
 			} else if (option.equals("13")) {
+				// Sell regular tickets
+			} else if (option.equals("14")) {
+				// Sell advance tickets
+			} else if (option.equals("15")) {
+				// Sell advance student tickets
+			} else if (option.equals("16")) {
+				// Pay Client
+			} else if (option.equals("17")) {
+				// Print all tickets for a certain day
+			} else if (option.equals("18")) {
 				// Help
 				help();
 			} else {
