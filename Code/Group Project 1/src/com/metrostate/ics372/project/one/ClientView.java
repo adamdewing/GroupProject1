@@ -47,6 +47,7 @@ public class ClientView extends BaseView{
 		Date endDate;
 		boolean isConflicted = true;
 		String name;
+		double price;
 		
 		TheaterApplication.clearPage();
 		Scanner scanner = new Scanner(System.in);
@@ -60,7 +61,8 @@ public class ClientView extends BaseView{
 
 			System.out.println("Enter name of show for " + client.getName() + ": ");
 			name = scanner.nextLine();
-
+			System.out.println("Enter ticket price: ");
+			price = scanner.nextDouble();
 			do {
 				do {
 					System.out.println("Enter start date(mm/dd/yyyy): ");
@@ -87,7 +89,7 @@ public class ClientView extends BaseView{
 			} while (isConflicted);
 
 		}
-		Show show = new Show(name, id, startDate, endDate);
+		Show show = new Show(name, id, startDate, endDate, price);
 		client.setScheduled(true);
 		showList.add(show);
 		System.out.println("Show Information" + '\n' + TheaterApplication.LINE_SEPARATER + '\n' + show.toString());
@@ -228,4 +230,24 @@ public class ClientView extends BaseView{
 		}
 
 	}
+	
+	public void payClient() {
+		TheaterApplication.clearPage();
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter client ID: ");
+		String id = scanner.nextLine();
+		Client client = clientList.find(id);
+		if (client == null) {
+			System.out.println("Client does not exist.");
+			return;
+		} else {
+			System.out.println("Current balace: " + client.getBalance());
+			System.out.println("Enter amount to be paid to " + client.getName() + ": ");
+			double payment = scanner.nextDouble();
+			client.setBalance(payment);
+		System.out.println(
+				"Client Information" + '\n' + TheaterApplication.LINE_SEPARATER + '\n' + client.toString());
+		pressEnterKeyToContinue();
+	}
+}
 }

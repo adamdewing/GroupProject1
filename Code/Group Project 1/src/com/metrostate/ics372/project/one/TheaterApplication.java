@@ -188,7 +188,7 @@ public class TheaterApplication extends BaseView {
 			} else if (option.equals("15")) {
 				// Sell advance student tickets
 			} else if (option.equals("16")) {
-				// Pay Client
+				clientView.payClient();
 			} else if (option.equals("17")) {
 				// Print all tickets for a certain day
 			} else if (option.equals("18")) {

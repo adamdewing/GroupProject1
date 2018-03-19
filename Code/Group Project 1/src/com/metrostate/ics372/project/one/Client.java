@@ -60,7 +60,7 @@ public class Client implements Serializable{
 	}
 
 	public void setBalance(double balance) {
-		this.balance = balance;
+		this.balance = this.balance + balance;
 	}
 	
 	public String getClientId() {

@@ -14,8 +14,8 @@ public class Show implements Serializable{
 	private String clientId;
 	private double ticketPrice;
 
-	public Show(String name, String clientId, Date start, Date end) {
-		//TODO add in ticket price here
+	public Show(String name, String clientId, Date start, Date end, double ticketPrice) {
+		this.ticketPrice = ticketPrice;
 		this.showName = name;
 		this.clientId = id;
 		this.startDate = start;
@@ -41,8 +41,14 @@ public class Show implements Serializable{
 	public String getShowName() {
 		return showName;
 	}
+	
+	public double getTicketPrice() {
+		return ticketPrice;
+	}
 
-
+	public void setTicketPrice(double ticketPrice) {
+		this.ticketPrice = ticketPrice;
+	}
 
 	public Date getStartDate() {
 		return startDate;
@@ -75,7 +81,7 @@ public class Show implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Show [id=" + id + ", showName=" + showName + ", startDate=" + startDate + ", endDate=" + endDate
+		return "Show [id=" + id + ", showName=" + showName + "ticketPrice" + ticketPrice + ", startDate=" + startDate + ", endDate=" + endDate
 				+ ", clientId=" + clientId + "]";
 	}
 }
