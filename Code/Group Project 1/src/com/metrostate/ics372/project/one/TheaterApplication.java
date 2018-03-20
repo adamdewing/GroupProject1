@@ -36,6 +36,8 @@ public class TheaterApplication extends BaseView {
 
 	private DataStorageView dataStorageView = new DataStorageView();
 
+	private TicketView ticketView = new TicketView();
+
 	private void exit() {
 		System.exit(0);
 	}
@@ -190,7 +192,7 @@ public class TheaterApplication extends BaseView {
 			} else if (option.equals("16")) {
 				clientView.payClient();
 			} else if (option.equals("17")) {
-				// Print all tickets for a certain day
+				ticketView.printAllTicketsByDate();
 			} else if (option.equals("18")) {
 				// Help
 				help();

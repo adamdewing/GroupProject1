@@ -11,13 +11,13 @@ public class TicketView extends BaseView{
         ticketList = TicketList.instance();
     }
 
-    public void printAllTickets(){
+    public void printAllTicketsByDate(){
         Scanner scanner = new Scanner(System.in);
         TheaterApplication.clearPage();
 
-        System.out.println("Please enter a date: ");
+        System.out.println("Please enter a date (: ");
         String targetDate = scanner.nextLine();
 
-        
+        ticketList.printAllTicketsByDate(targetDate);
     }
 }
