@@ -5,14 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
 
 public class TicketList implements DataAccess<Ticket, String>, Modified {
 
+	private static boolean isModified = false;
 	private static TicketList ticketList;
 	public static List<Ticket> tickets = new ArrayList<Ticket>();
 
 	public static TicketList instance() {
-		if (tickets == null) {
+		if (ticketList == null) {
 			return (ticketList = new TicketList());
 		} else {
 			return ticketList;
@@ -21,44 +23,54 @@ public class TicketList implements DataAccess<Ticket, String>, Modified {
 	
 	@Override
 	public boolean isModified() {
-		// TODO Auto-generated method stub
-		return false;
+		return isModified;
 	}
 
 	@Override
 	public void resetModifiedFlag() {
-		// TODO Auto-generated method stub
+		isModified = false;
 
 	}
 
 	@Override
 	public Ticket add(Ticket item) {
-		// TODO Auto-generated method stub
-		return null;
+		tickets.add(item);
+		return item;
 	}
 
 	@Override
 	public Ticket find(String id) {
-		// TODO Auto-generated method stub
+		for(Iterator<Ticket> iterator = tickets.iterator(); iterator.hasNext();) {
+			Ticket ticket = (Ticket) iterator.next();
+			if(ticket.getId().equals(id)) {
+				return ticket;
+			}
+		}
 		return null;
 	}
 
 	@Override
 	public List<Ticket> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return tickets;
 	}
 
 	@Override
 	public Ticket remove(String id) {
-		// TODO Auto-generated method stub
+		for (Iterator<Ticket> iterator = tickets.iterator(); iterator.hasNext();) {
+			Ticket ticket = (Ticket) iterator.next();
+			if (ticket.getId().equals(id)) {
+				iterator.remove();
+				isModified = true;
+				return ticket;
+			}
+		}
 		return null;
 	}
 
 	@Override
 	public void removeAll() {
-		// TODO Auto-generated method stub
-		
+		tickets = new ArrayList<Ticket>();
+		isModified = true;
 	}
 
 	public void printAllTicketsByDate(String date) {

@@ -28,6 +28,7 @@ public class TheaterApplication extends BaseView {
 	public static void main(String[] args) {
 		TheaterApplication app = new TheaterApplication();
 		app.startApplication();
+		
 	}
 
 	private CustomerView customerView = new CustomerView();
@@ -185,10 +186,13 @@ public class TheaterApplication extends BaseView {
 				dataStorageView.retrieveData();
 			} else if (option.equals("13")) {
 				// Sell regular tickets
+				ticketView.sellTickets(TicketType.REGULAR);
 			} else if (option.equals("14")) {
 				// Sell advance tickets
+				ticketView.sellTickets(TicketType.ADVANCE);
 			} else if (option.equals("15")) {
 				// Sell advance student tickets
+				ticketView.sellTickets(TicketType.STUDENT);
 			} else if (option.equals("16")) {
 				clientView.payClient();
 			} else if (option.equals("17")) {

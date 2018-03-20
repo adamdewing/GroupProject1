@@ -17,7 +17,7 @@ public class Show implements Serializable{
 	public Show(String name, String clientId, Date start, Date end, double ticketPrice) {
 		this.ticketPrice = ticketPrice;
 		this.showName = name;
-		this.clientId = id;
+		this.clientId = clientId;
 		this.startDate = start;
 		this.endDate = end;
 		Random rndObj = new Random();

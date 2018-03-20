@@ -5,7 +5,17 @@ package com.metrostate.ics372.project.one;
  *
  */
 public enum TicketType {
-	REGULAR,
-	ADVANCE,
-	STUDENT
+	REGULAR(100),
+	ADVANCE(70),
+	STUDENT(50);
+	
+	private final int percent;
+	
+	private TicketType(int percent) {
+		this.percent = percent;
+	}
+	
+	public int getPercent() {
+		return percent;
+	}
 }

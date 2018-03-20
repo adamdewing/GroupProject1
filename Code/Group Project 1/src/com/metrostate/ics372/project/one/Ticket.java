@@ -2,6 +2,7 @@ package com.metrostate.ics372.project.one;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Random;
 
 /**
  * 	Holds ticket information.
@@ -18,6 +19,16 @@ public class Ticket implements Serializable {
 	private String showId;
 	private Date showDate;
 	private TicketType type;
+	
+	public Ticket(String showId, Date showDate, TicketType type) {
+		Random rndObj = new Random();
+		int random = 10000 + rndObj.nextInt(100000 - 10000);
+		this.id = String.valueOf(random);
+		this.showId = showId;
+		this.showDate = showDate;
+		this.type = type;
+	}
+	
 	public String getId() {
 		return id;
 	}

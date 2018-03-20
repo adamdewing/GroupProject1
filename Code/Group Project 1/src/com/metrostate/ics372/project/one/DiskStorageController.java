@@ -135,6 +135,8 @@ public class DiskStorageController implements DataStorage {
 				shows.add((Show) obj);
 			} else if (obj.getClass() == Ticket.class) {
 				tickets.add((Ticket) obj);
+			} else if (obj.getClass() == Theater.class) {
+				Theater.instance().setMoney(((Theater)obj).getMoney());;
 			} else {
 				return Status.UNKNOWN_OBJECT_TYPE_FROM_DISK;
 			}
@@ -234,6 +236,7 @@ public class DiskStorageController implements DataStorage {
 			writeToDisk(clients, oos);
 			writeToDisk(shows, oos);
 			writeToDisk(tickets, oos);
+			writeToDisk(Theater.instance(), oos);
 			oos.close();
 			isOutputStreamClosed = true;
 			status = Status.OK;
@@ -264,7 +267,11 @@ public class DiskStorageController implements DataStorage {
 
 	private <E> void writeToDisk(List<E> list, ObjectOutputStream oos) throws IOException {
 		for (E item : list) {
-			oos.writeObject(item);
+			writeToDisk(item, oos);
 		}
+	}
+	
+	private <E> void writeToDisk(E item, ObjectOutputStream oos) throws IOException{
+		oos.writeObject(item);
 	}
 }
