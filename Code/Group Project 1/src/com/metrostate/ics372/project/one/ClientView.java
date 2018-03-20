@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author xiong
  *
  */
-public class ClientView extends BaseView{
+public class ClientView extends BaseView {
 	public static final int CLIENT_NOT_FOUND = 1;
 	public static final int CLIENT_REMOVED = 2;
 	public static final int CLIENT_SHOW_SCHEDULED = 3;
@@ -48,7 +48,7 @@ public class ClientView extends BaseView{
 		boolean isConflicted = true;
 		String name;
 		double price;
-		
+
 		TheaterApplication.clearPage();
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Client ID: ");
@@ -76,13 +76,13 @@ public class ClientView extends BaseView{
 					endDate = validateInputDates(date2, startDate);
 
 				} while (endDate == null);
-				
+
 				Show show = showDuringSamePeriod(startDate, endDate);
 				if (show != null) {
 					System.out.println("The entered dates conflict with the following show:");
 					System.out.println(show.toString());
 					System.out.println("Please pick different dates.");
-				}else {
+				} else {
 					isConflicted = false;
 				}
 
@@ -96,7 +96,6 @@ public class ClientView extends BaseView{
 		pressEnterKeyToContinue();
 
 	}
-
 
 	/**
 	 * Checks to see if there is another show playing during the same time period as
@@ -112,11 +111,11 @@ public class ClientView extends BaseView{
 	 */
 	private Show showDuringSamePeriod(Date startDate, Date endDate) {
 		List<Show> shows = ShowList.instance().getAll();
-		for(Show show : shows) {
-			if(startDate.after(show.getStartDate()) && startDate.before(show.getEndDate())) {
+		for (Show show : shows) {
+			if (startDate.after(show.getStartDate()) && startDate.before(show.getEndDate())) {
 				return show;
 			}
-			if(endDate.after(show.getStartDate()) && endDate.before(show.getEndDate())) {
+			if (endDate.after(show.getStartDate()) && endDate.before(show.getEndDate())) {
 				return show;
 			}
 		}
@@ -147,7 +146,7 @@ public class ClientView extends BaseView{
 		pressEnterKeyToContinue();
 
 	}
-	
+
 	public void removeClients() {
 		int result;
 		TheaterApplication.clearPage();
@@ -230,7 +229,7 @@ public class ClientView extends BaseView{
 		}
 
 	}
-	
+
 	public void payClient() {
 		TheaterApplication.clearPage();
 		Scanner scanner = new Scanner(System.in);
@@ -244,10 +243,17 @@ public class ClientView extends BaseView{
 			System.out.println("Current balace: " + client.getBalance());
 			System.out.println("Enter amount to be paid to " + client.getName() + ": ");
 			double payment = scanner.nextDouble();
-			client.setBalance(payment);
-		System.out.println(
-				"Client Information" + '\n' + TheaterApplication.LINE_SEPARATER + '\n' + client.toString());
-		pressEnterKeyToContinue();
+			if (payment > client.getBalance()) {
+				do {
+					System.out.println("The amount exceeds the client's balance, please enter another amount:");
+					payment = scanner.nextDouble();
+				} while (payment > client.getBalance());
+			} else {
+				client.updateBalance(payment);
+			}
+			System.out.println(
+					"Client Information" + '\n' + TheaterApplication.LINE_SEPARATER + '\n' + client.toString());
+			pressEnterKeyToContinue();
+		}
 	}
-}
 }
