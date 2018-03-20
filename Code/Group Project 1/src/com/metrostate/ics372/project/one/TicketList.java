@@ -77,20 +77,16 @@ public class TicketList implements DataAccess<Ticket, String>, Modified {
 	 * Method which prints all tickets for a specific date.
 	 * @param date Date parameter which represents the target date.
 	 */
-	public void printAllTicketsByDate(String date) {
+	public void printAllTicketsByDate(Date date) {
 		Date targetDate;
 
-		try {
-			targetDate = new SimpleDateFormat("mm/dd/yyyy").parse(date);
-
-			for(int i = 0; i < tickets.size(); i++){
-				if(targetDate.equals(tickets.get(i).getShowDate())){
-					System.out.println(tickets.get(i).toString());
-				}
+		System.out.println("DEBUG printAllTicketsByDate for date:" + date);
+		for(int i = 0; i < tickets.size(); i++){
+			if(date.equals(tickets.get(i).getShowDate())){
+				System.out.println(tickets.get(i).toString());
+			}else {
+				System.out.println("DEBUG - " + tickets.get(i).toString());
 			}
-
-		} catch (ParseException e) {
-			e.printStackTrace();
 		}
 	}
 }

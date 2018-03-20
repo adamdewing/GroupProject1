@@ -16,46 +16,39 @@ public class TicketView extends BaseView{
     }
 
     
-    public void sellTickets(TicketType ticketType) {
-    	Scanner scanner = new Scanner(System.in);
-    	TheaterApplication.clearPage();
+    private double calculateTicketPrice(Show show, TicketType ticketType) {
+    	return show.getTicketPrice() * ticketType.getPercent() / 100;
+    }
+    
+    private String getCustomerId(Scanner scanner) {
+    	String customerId = null;
     	boolean validDataFlag = false;
-    	String showId = null;
-    	Date showDate = null;
-    	int numberOfTickets = 0;
-    	Show show = null;
-    	
-    	System.out.println("Sell " + ticketType);
     	do {
-    		System.out.println("Enter in show id:");
-    		showId = scanner.nextLine();
-    		
-    		show = ShowList.instance().find(showId);
-    		if(show == null) {
-    			System.out.println("Invalid show id entered!");
-    			pressEnterKeyToContinue();
+    		System.out.println("Enter in customer id or leave blank to see a list of customers:");
+    		customerId = scanner.nextLine();
+    		if(customerId.equals("")) {
+    	        List<Customer> tempCustomerList = CustomerList.instance().getAll();
+    	        tempCustomerList.forEach(item -> System.out.print(item.toString()));
+    	        System.out.println(TheaterApplication.LINE_SEPARATER);
     		}else {
-    			validDataFlag = true;
-    		}
-    	}while(!validDataFlag);
-    	
-    	
-    	
-    	validDataFlag = false;
-    	do {
-    		System.out.println(show.getShowName() + " runs from " + show.getStartDate() + " - " + show.getEndDate());
-    		System.out.println("Enter in date(mm/dd/yyyy):");
-    		String value = scanner.nextLine();
-    		showDate = convertStringToDate(value);
-    		if(showDate != null) {
-    			if(isValidTicketDate(showDate, show)) {
-    				validDataFlag = true;
-    			}else {
-    				System.out.println("Invalid show date entered!");
+    			if(CustomerList.instance().find(customerId) == null) {
+    				System.out.println("Invalid customer id entered!");
     				pressEnterKeyToContinue();
+    				
+    			}else {
+    				validDataFlag = true;
     			}
     		}
+    		
     	}while(!validDataFlag);
+    	
+    	return customerId;
+    }
+    
+    
+    private int getNumberOfTicketsToSell(Scanner scanner) {
+    	int numberOfTickets = 0;
+    	boolean validDataFlag = false;
     	
     	validDataFlag = false;
     	do {
@@ -69,44 +62,58 @@ public class TicketView extends BaseView{
     		}
     	}while(!validDataFlag);
     	
-    	Client client = ClientList.instance().find(show.getClientId());
-    	//TODO probably should round to the nearest penny
-    	double ticketCost = show.getTicketPrice() * ticketType.getPercent() / 100;
+    	return numberOfTickets;
+    }
+    
+    private Show getShow(Scanner scanner) {
+    	String showId = null;
+    	Show show = null;
+    	boolean validDataFlag = false;
     	
-    	for(int i = 0; i < numberOfTickets; i++) {
-    		Ticket ticket = new Ticket(showId, showDate, ticketType);
-    		ticketList.add(ticket);
-    		client.updateBalance(client.getBalance() + ticketCost / 2);
-    		Theater.instance().setMoney(Theater.instance().getMoney() + ticketCost / 2);
-    		System.out.println("Ticket with serial number " + ticket.getId() + " was created.");
-    	}
-    	pressEnterKeyToContinue();
-    	return;
+    	validDataFlag = false;
+    	do {
+    		System.out.println("Enter in show id or leave blank to see a list of shows:");
+    		showId = scanner.nextLine();
+    		
+    		if(showId.equals("")) {
+    			List<Show> showList = ShowList.instance().getAll();
+    			showList.forEach(item -> System.out.println(item.toString()));
+    			System.out.println(TheaterApplication.LINE_SEPARATER);
+    		}else {
+    			show = ShowList.instance().find(showId);
+    			if(show == null) {
+    				System.out.println("Invalid show id entered!");
+    				pressEnterKeyToContinue();
+    			}else {
+    				validDataFlag = true;
+    			}
+    		}
+    	}while(!validDataFlag);
+    	
+    	return show;
     }
     
-    public void printAllTicketsByDate(){
-        Scanner scanner = new Scanner(System.in);
-        TheaterApplication.clearPage();
-
-        System.out.println("Please enter a date (: ");
-        String targetDate = scanner.nextLine();
-
-        ticketList.printAllTicketsByDate(targetDate);
-    }
-    
-    
-    private Date convertStringToDate(String value) {
-		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-		sdf.setLenient(false);
-		Date date;
-		try {
-			date = sdf.parse(value);
-		} catch (ParseException e) {
-			System.out.println("Invalid date, please enter the date in the following format: mm/dd/yyyy ");
-			pressEnterKeyToContinue();
-			return null;
-		}
-		return date;
+    private Date getTicketDate(Show show, Scanner scanner) {
+    	Date ticketDate = null;
+    	boolean validDataFlag = false;
+    	
+    	validDataFlag = false;
+    	do {
+    		System.out.println(show.getShowName() + " runs from " + show.getStartDate() + " - " + show.getEndDate());
+    		System.out.println("Enter in date(mm/dd/yyyy):");
+    		String value = scanner.nextLine();
+    		ticketDate = convertStringToDate(value);
+    		if(ticketDate != null) {
+    			if(isValidTicketDate(ticketDate, show)) {
+    				validDataFlag = true;
+    			}else {
+    				System.out.println("Invalid show date entered!");
+    				pressEnterKeyToContinue();
+    			}
+    		}
+    	}while(!validDataFlag);
+    	
+    	return ticketDate;
     }
     
     private boolean isValidTicketDate(Date date, Show show) {
@@ -116,5 +123,59 @@ public class TicketView extends BaseView{
     	}else {
     		return false;
     	}
+    }
+    
+    public void printAllTicketsByDate(){
+        Scanner scanner = new Scanner(System.in);
+        TheaterApplication.clearPage();
+
+        System.out.println("Please enter a date (mm/dd/yyyy): ");
+        String targetDate = scanner.nextLine();
+        
+        Date date = convertStringToDate(targetDate);
+        if(date == null) {
+        	System.out.println("Invalid date entered!");
+        }else {
+        	ticketList.printAllTicketsByDate(date);
+        }
+        pressEnterKeyToContinue();
+    }
+    
+    public void sellTickets(TicketType ticketType) {
+    	String customerId = null;
+    	Date ticketDate = null;
+    	int numberOfTickets = 0;
+    	Show show = null;
+    	
+    	Scanner scanner = new Scanner(System.in);
+    	TheaterApplication.clearPage();
+    	
+    	System.out.println("Sell " + ticketType + " tickets");
+    	System.out.println(TheaterApplication.LINE_SEPARATER);
+
+    	// Get information from the user
+    	customerId = getCustomerId(scanner);
+    	show = getShow(scanner);
+    	ticketDate = getTicketDate(show, scanner);
+    	numberOfTickets = getNumberOfTicketsToSell(scanner);
+    	
+    	Client client = ClientList.instance().find(show.getClientId());
+    	//TODO probably should round to the nearest penny
+    	double ticketCost = calculateTicketPrice(show, ticketType);
+    	
+    	for(int i = 0; i < numberOfTickets; i++) {
+    		Ticket ticket = new Ticket(customerId, show.getId(), ticketDate, ticketType);
+    		ticketList.add(ticket);
+    		client.updateBalance(ticketCost / 2);
+    		Theater.instance().setMoney(Theater.instance().getMoney() + ticketCost / 2);
+    		System.out.println("Ticket with serial number " + ticket.getId() + " was created.");
+    	}
+    	
+    	if(ticketType == TicketType.STUDENT) {
+    		System.out.println("Must show valid student id.");
+    	}
+    	
+    	pressEnterKeyToContinue();
+    	return;
     }
 }

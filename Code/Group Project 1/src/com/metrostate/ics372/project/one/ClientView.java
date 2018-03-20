@@ -249,7 +249,7 @@ public class ClientView extends BaseView {
 					payment = scanner.nextDouble();
 				} while (payment > client.getBalance());
 			} else {
-				client.updateBalance(payment);
+				client.updateBalance(payment * (-1));
 			}
 			System.out.println(
 					"Client Information" + '\n' + TheaterApplication.LINE_SEPARATER + '\n' + client.toString());
