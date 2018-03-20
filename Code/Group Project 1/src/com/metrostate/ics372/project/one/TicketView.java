@@ -76,7 +76,7 @@ public class TicketView extends BaseView{
     	for(int i = 0; i < numberOfTickets; i++) {
     		Ticket ticket = new Ticket(showId, showDate, ticketType);
     		ticketList.add(ticket);
-    		client.setBalance(client.getBalance() + ticketCost / 2);
+    		client.updateBalance(client.getBalance() + ticketCost / 2);
     		Theater.instance().setMoney(Theater.instance().getMoney() + ticketCost / 2);
     		System.out.println("Ticket with serial number " + ticket.getId() + " was created.");
     	}
