@@ -61,6 +61,10 @@ public class TicketList implements DataAccess<Ticket, String>, Modified {
 		
 	}
 
+	/**
+	 * Method which prints all tickets for a specific date.
+	 * @param date Date parameter which represents the target date.
+	 */
 	public void printAllTicketsByDate(String date) {
 		Date targetDate;
 
